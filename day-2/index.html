@@ -1,0 +1,990 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../day-1/">
+      
+      
+        <link rel="next" href="../day-3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Computer Hardware, Software & Operating Systems - Study Guide Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wgu-introduction-to-it-day-2-study-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Study Guide Home" class="md-header__button md-logo" aria-label="Study Guide Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Study Guide Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Computer Hardware, Software & Operating Systems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Study Guide Home" class="md-nav__button md-logo" aria-label="Study Guide Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Study Guide Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to IT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to IT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Information Technology?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Hardware, Software & Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Hardware, Software & Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topic-computer-hardware-software-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic: Computer Hardware, Software &amp; Operating Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic: Computer Hardware, Software &amp; Operating Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#todays-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Today's Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servers, Infrastructure, Virtualization & Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topic-computer-hardware-software-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic: Computer Hardware, Software &amp; Operating Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic: Computer Hardware, Software &amp; Operating Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#todays-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Today's Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="wgu-introduction-to-it-day-2-study-guide">WGU Introduction to IT — Day 2 Study Guide</h1>
+<h2 id="topic-computer-hardware-software-operating-systems">Topic: Computer Hardware, Software &amp; Operating Systems</h2>
+<h3 id="todays-goal">Today's Goal</h3>
+<p>By the end of Day 2, you should be able to:</p>
+<ol>
+<li>Identify the major components of a computer system.</li>
+<li>Explain the purpose of the CPU, RAM, storage, motherboard, and GPU.</li>
+<li>Distinguish between volatile and non-volatile memory.</li>
+<li>Explain the difference between HDD and SSD storage.</li>
+<li>Explain what an operating system does.</li>
+<li>Distinguish between system software and application software.</li>
+<li>Explain the basic relationship between hardware, the operating system, and applications.</li>
+<li>Explain the difference between a client and a server.</li>
+<li>Understand why organizations use servers rather than relying only on individual computers.</li>
+</ol>
+<hr />
+<h1 id="1-the-basic-computer-model">1. The Basic Computer Model</h1>
+<p>At the most basic level, a computer system does four things:</p>
+<p><strong>Input → Processing → Storage → Output</strong></p>
+<p>For example, imagine entering a number into a calculator application.</p>
+<p><strong>Input</strong></p>
+<p>You type:</p>
+<p><code>25 + 75</code></p>
+<p>↓</p>
+<p><strong>Processing</strong></p>
+<p>The CPU performs the calculation.</p>
+<p>↓</p>
+<p><strong>Storage</strong></p>
+<p>The computer may temporarily hold the information in memory.</p>
+<p>↓</p>
+<p><strong>Output</strong></p>
+<p>The application displays:</p>
+<p><code>100</code></p>
+<p>Almost every computer system can be understood through some variation of this model.</p>
+<hr />
+<h1 id="2-hardware-vs-software">2. Hardware vs. Software</h1>
+<p>Remember from Day 1:</p>
+<blockquote>
+<p><strong>Hardware is the physical equipment.</strong></p>
+<p><strong>Software is the instructions that tell the hardware what to do.</strong></p>
+</blockquote>
+<p>For example:</p>
+<h3 id="hardware">Hardware</h3>
+<ul>
+<li>CPU</li>
+<li>RAM</li>
+<li>SSD</li>
+<li>Keyboard</li>
+<li>Monitor</li>
+<li>Motherboard</li>
+</ul>
+<h3 id="software">Software</h3>
+<ul>
+<li>Windows</li>
+<li>macOS</li>
+<li>Linux</li>
+<li>Microsoft Excel</li>
+<li>Chrome</li>
+<li>Database applications</li>
+</ul>
+<p>The two depend on each other.</p>
+<p>You can't run Excel without hardware.</p>
+<p>But hardware without software isn't particularly useful as a general-purpose computer.</p>
+<hr />
+<h1 id="3-the-cpu-central-processing-unit">3. The CPU — Central Processing Unit</h1>
+<p>The <strong>CPU</strong> is often described as the "brain" of the computer.</p>
+<p>That's a useful beginner analogy, although it isn't technically perfect.</p>
+<p>The CPU executes instructions and performs calculations.</p>
+<p>For example, when software tells the computer:</p>
+<blockquote>
+<p>"Add these two numbers."</p>
+</blockquote>
+<p>The CPU performs the underlying operations necessary to accomplish that instruction.</p>
+<h3 id="important-cpu-concepts">Important CPU concepts</h3>
+<p>You may encounter:</p>
+<ul>
+<li>CPU cores</li>
+<li>Clock speed</li>
+<li>Threads</li>
+<li>Cache</li>
+</ul>
+<p>For this course, focus primarily on:</p>
+<blockquote>
+<p><strong>The CPU executes instructions and performs processing.</strong></p>
+</blockquote>
+<hr />
+<h1 id="4-cpu-cores">4. CPU Cores</h1>
+<p>Modern CPUs commonly have multiple cores.</p>
+<p>For example:</p>
+<ul>
+<li>2-core CPU</li>
+<li>4-core CPU</li>
+<li>8-core CPU</li>
+<li>16-core CPU</li>
+</ul>
+<p>A core can execute instructions.</p>
+<p>Multiple cores allow a CPU to work on multiple tasks concurrently.</p>
+<h3 id="simple-analogy">Simple analogy</h3>
+<p>Imagine a restaurant kitchen.</p>
+<h3 id="one-core">One core</h3>
+<p>One cook.</p>
+<h3 id="four-cores">Four cores</h3>
+<p>Four cooks.</p>
+<p>More cooks can potentially handle more work simultaneously.</p>
+<p>However, simply having more cores doesn't automatically make every application four times faster.</p>
+<p>The software and workload matter.</p>
+<hr />
+<h1 id="5-ram-random-access-memory">5. RAM — Random Access Memory</h1>
+<p>RAM is the computer's <strong>short-term working memory</strong>.</p>
+<p>When you open an application, the computer loads information into RAM so the CPU can access it quickly.</p>
+<p>For example, imagine opening:</p>
+<ul>
+<li>Chrome</li>
+<li>Excel</li>
+<li>Teams</li>
+<li>Spotify</li>
+</ul>
+<p>All of those programs need memory while they're running.</p>
+<hr />
+<h2 id="ram-is-volatile">RAM is volatile</h2>
+<p>This is an important term.</p>
+<p><strong>Volatile memory loses its contents when power is removed.</strong></p>
+<p>If you turn off your computer, the information stored in RAM disappears.</p>
+<p>Think:</p>
+<blockquote>
+<p><strong>RAM = temporary workspace</strong></p>
+</blockquote>
+<hr />
+<h1 id="6-storage">6. Storage</h1>
+<p>Storage is where information is kept for longer periods.</p>
+<p>Examples:</p>
+<ul>
+<li>SSD</li>
+<li>HDD</li>
+<li>USB drive</li>
+<li>External hard drive</li>
+</ul>
+<p>Unlike RAM, storage is generally <strong>non-volatile</strong>.</p>
+<p>That means information remains when the computer is turned off.</p>
+<p>For example:</p>
+<blockquote>
+<p>You save a Word document.</p>
+</blockquote>
+<p>The document is stored on the computer's storage device.</p>
+<hr />
+<h1 id="7-ram-vs-storage">7. RAM vs. Storage</h1>
+<p>This distinction is extremely important.</p>
+<table>
+<thead>
+<tr>
+<th>RAM</th>
+<th>Storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short-term working memory</td>
+<td>Long-term data storage</td>
+</tr>
+<tr>
+<td>Usually volatile</td>
+<td>Non-volatile</td>
+</tr>
+<tr>
+<td>Very fast</td>
+<td>Generally slower than RAM</td>
+</tr>
+<tr>
+<td>Used while programs are running</td>
+<td>Stores files and applications</td>
+</tr>
+<tr>
+<td>Contents disappear when power is lost</td>
+<td>Contents remain</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analogy">Analogy</h3>
+<p>Think of your desk.</p>
+<p><strong>RAM = what's currently on your desk</strong></p>
+<p><strong>Storage = what's in your filing cabinet</strong></p>
+<p>Your desk is where you're actively working.</p>
+<p>Your filing cabinet stores things for later.</p>
+<hr />
+<h1 id="8-hdd-vs-ssd">8. HDD vs. SSD</h1>
+<p>Two common types of storage are:</p>
+<h2 id="hdd-hard-disk-drive">HDD — Hard Disk Drive</h2>
+<p>Uses spinning magnetic disks.</p>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Usually inexpensive</li>
+<li>Large capacities available</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
+<ul>
+<li>Mechanical</li>
+<li>Slower</li>
+<li>More vulnerable to physical damage</li>
+</ul>
+<hr />
+<h2 id="ssd-solid-state-drive">SSD — Solid State Drive</h2>
+<p>Uses flash memory and has no moving mechanical disk.</p>
+<h3 id="advantages_1">Advantages</h3>
+<ul>
+<li>Faster</li>
+<li>More resistant to physical shock</li>
+<li>Lower latency</li>
+</ul>
+<h3 id="disadvantages_1">Disadvantages</h3>
+<ul>
+<li>Historically more expensive per GB, although prices have decreased substantially</li>
+</ul>
+<p>For modern computers, SSDs are extremely common.</p>
+<hr />
+<h1 id="9-the-motherboard">9. The Motherboard</h1>
+<p>The motherboard is the primary circuit board connecting many of the computer's components.</p>
+<p>It allows components such as:</p>
+<ul>
+<li>CPU</li>
+<li>RAM</li>
+<li>Storage</li>
+<li>GPU</li>
+<li>Network hardware</li>
+</ul>
+<p>to communicate with each other.</p>
+<p>Think of it as the computer's <strong>central connection platform</strong>.</p>
+<hr />
+<h1 id="10-gpu-graphics-processing-unit">10. GPU — Graphics Processing Unit</h1>
+<p>The GPU is designed to perform graphics-related processing.</p>
+<p>GPUs are especially important for:</p>
+<ul>
+<li>Gaming</li>
+<li>3D graphics</li>
+<li>Video processing</li>
+<li>Scientific computing</li>
+<li>Machine learning</li>
+<li>AI workloads</li>
+</ul>
+<p>Originally, GPUs were primarily associated with graphics.</p>
+<p>Today, they are also extremely important for AI because they can perform many calculations simultaneously.</p>
+<p>This is one of the first connections you'll encounter between <strong>traditional computer hardware and modern AI</strong>.</p>
+<hr />
+<h1 id="11-input-and-output-devices">11. Input and Output Devices</h1>
+<p>Computers need ways to interact with the outside world.</p>
+<h2 id="input-devices">Input Devices</h2>
+<p>Send information <strong>into</strong> the computer.</p>
+<p>Examples:</p>
+<ul>
+<li>Keyboard</li>
+<li>Mouse</li>
+<li>Microphone</li>
+<li>Camera</li>
+<li>Scanner</li>
+<li>Touchscreen</li>
+</ul>
+<h2 id="output-devices">Output Devices</h2>
+<p>Present information <strong>from</strong> the computer.</p>
+<p>Examples:</p>
+<ul>
+<li>Monitor</li>
+<li>Speakers</li>
+<li>Printer</li>
+<li>Projector</li>
+</ul>
+<p>Some devices can perform both functions.</p>
+<p>For example:</p>
+<blockquote>
+<p>A touchscreen can display information and receive touch input.</p>
+</blockquote>
+<hr />
+<h1 id="12-what-is-an-operating-system">12. What Is an Operating System?</h1>
+<p>The operating system, or <strong>OS</strong>, is the core system software that manages a computer's resources and provides an environment for applications to run.</p>
+<p>Common operating systems include:</p>
+<ul>
+<li>Microsoft Windows</li>
+<li>macOS</li>
+<li>Linux</li>
+<li>Android</li>
+<li>iOS</li>
+</ul>
+<p>The operating system acts as an intermediary between applications and hardware.</p>
+<p>A simplified model:</p>
+<p><strong>Application</strong></p>
+<p>↓</p>
+<p><strong>Operating System</strong></p>
+<p>↓</p>
+<p><strong>Hardware</strong></p>
+<p>For example:</p>
+<p>You click "Print" in Microsoft Word.</p>
+<p>Word doesn't need to directly control the printer's hardware.</p>
+<p>Instead, it communicates through the operating system and associated drivers/services.</p>
+<hr />
+<h1 id="13-what-does-an-operating-system-do">13. What Does an Operating System Do?</h1>
+<p>An operating system performs many important functions.</p>
+<h2 id="resource-management">Resource Management</h2>
+<p>Manages:</p>
+<ul>
+<li>CPU</li>
+<li>RAM</li>
+<li>Storage</li>
+<li>Devices</li>
+</ul>
+<h2 id="file-management">File Management</h2>
+<p>Provides ways to:</p>
+<ul>
+<li>Create files</li>
+<li>Open files</li>
+<li>Rename files</li>
+<li>Delete files</li>
+<li>Organize files</li>
+</ul>
+<h2 id="process-management">Process Management</h2>
+<p>Controls running programs and processes.</p>
+<h2 id="device-management">Device Management</h2>
+<p>Helps software communicate with hardware devices.</p>
+<h2 id="user-interface">User Interface</h2>
+<p>Provides ways for users to interact with the computer.</p>
+<p>Examples:</p>
+<ul>
+<li>Windows desktop</li>
+<li>macOS Finder</li>
+<li>Linux desktop environments</li>
+<li>Command-line interfaces</li>
+</ul>
+<hr />
+<h1 id="14-system-software-vs-application-software">14. System Software vs. Application Software</h1>
+<p>This distinction is worth memorizing.</p>
+<h2 id="system-software">System Software</h2>
+<p>Supports the operation of the computer itself.</p>
+<p>Examples:</p>
+<ul>
+<li>Operating systems</li>
+<li>Device drivers</li>
+<li>System utilities</li>
+</ul>
+<h2 id="application-software">Application Software</h2>
+<p>Helps users perform specific tasks.</p>
+<p>Examples:</p>
+<ul>
+<li>Microsoft Word</li>
+<li>Excel</li>
+<li>Chrome</li>
+<li>Photoshop</li>
+<li>Salesforce</li>
+<li>Your company's analytics application</li>
+</ul>
+<h3 id="simple-rule">Simple rule</h3>
+<p>Ask:</p>
+<blockquote>
+<p>"Is this software primarily helping operate the computer, or helping the user accomplish a task?"</p>
+</blockquote>
+<p>Operating system → <strong>System software</strong></p>
+<p>Excel → <strong>Application software</strong></p>
+<hr />
+<h1 id="15-what-is-a-server">15. What Is a Server?</h1>
+<p>A server is a computer or software system that provides services or resources to other computers or systems.</p>
+<p>The other systems are commonly called <strong>clients</strong>.</p>
+<p>For example:</p>
+<p><strong>Client</strong></p>
+<p>Your laptop</p>
+<p>↓</p>
+<p><strong>Network</strong></p>
+<p>↓</p>
+<p><strong>Server</strong></p>
+<p>Web server</p>
+<p>The server might:</p>
+<ul>
+<li>Deliver a webpage</li>
+<li>Process an application request</li>
+<li>Store files</li>
+<li>Provide database services</li>
+<li>Authenticate users</li>
+</ul>
+<hr />
+<h1 id="16-client-vs-server">16. Client vs. Server</h1>
+<h2 id="client">Client</h2>
+<p>Usually requests or consumes a service.</p>
+<p>Examples:</p>
+<ul>
+<li>Laptop</li>
+<li>Smartphone</li>
+<li>Web browser</li>
+<li>Mobile application</li>
+</ul>
+<h2 id="server">Server</h2>
+<p>Provides a service.</p>
+<p>Examples:</p>
+<ul>
+<li>Web server</li>
+<li>Database server</li>
+<li>File server</li>
+<li>Authentication server</li>
+</ul>
+<p>The distinction is about <strong>role</strong>, not necessarily physical size.</p>
+<p>A server doesn't have to be a giant machine sitting in a data center.</p>
+<p>A server can be software running on a computer.</p>
+<hr />
+<h1 id="17-a-real-world-example">17. A Real-World Example</h1>
+<p>Imagine you open your company's analytics application.</p>
+<p>You are using:</p>
+<p><strong>Your laptop</strong></p>
+<p>↓</p>
+<p><strong>Web browser</strong></p>
+<p>↓</p>
+<p><strong>Network</strong></p>
+<p>↓</p>
+<p><strong>Application server</strong></p>
+<p>↓</p>
+<p><strong>Database server</strong></p>
+<p>The laptop is acting as a <strong>client</strong>.</p>
+<p>The application server provides the application.</p>
+<p>The database server provides data.</p>
+<p>This is the beginning of understanding <strong>client/server architecture</strong>.</p>
+<hr />
+<h1 id="18-virtual-machines">18. Virtual Machines</h1>
+<p>You may encounter the term <strong>virtual machine (VM)</strong>.</p>
+<p>A virtual machine is a software-based computer that runs on physical hardware.</p>
+<p>For example, one physical server might run:</p>
+<p>```text
+Physical Server
+│
+├── Virtual Machine 1
+│   └── Application Server
+│
+├── Virtual Machine 2
+│   └── Database Server
+│
+└── Virtual Machine 3
+    └── Web Server</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

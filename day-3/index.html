@@ -1,0 +1,1545 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../day-2/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Servers, Infrastructure, Virtualization & Cloud Computing - Study Guide Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wgu-introduction-to-it-day-3-study-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Study Guide Home" class="md-header__button md-logo" aria-label="Study Guide Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Study Guide Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Servers, Infrastructure, Virtualization & Cloud Computing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Study Guide Home" class="md-nav__button md-logo" aria-label="Study Guide Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Study Guide Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to IT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to IT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Information Technology?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Hardware, Software & Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servers, Infrastructure, Virtualization & Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servers, Infrastructure, Virtualization & Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#servers-infrastructure-virtualization-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servers, Infrastructure, Virtualization &amp; Cloud Computing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servers, Infrastructure, Virtualization &amp; Cloud Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#day-3-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day 3 Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#servers-infrastructure-virtualization-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servers, Infrastructure, Virtualization &amp; Cloud Computing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servers, Infrastructure, Virtualization &amp; Cloud Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#day-3-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day 3 Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="wgu-introduction-to-it-day-3-study-guide">WGU Introduction to IT — Day 3 Study Guide</h1>
+<h2 id="servers-infrastructure-virtualization-cloud-computing">Servers, Infrastructure, Virtualization &amp; Cloud Computing</h2>
+<h3 id="day-3-goals">Day 3 Goals</h3>
+<p>By the end of this study session, you should be able to:</p>
+<ol>
+<li>Explain what a server is and how it differs from a typical client computer.</li>
+<li>Identify common types of servers and the services they provide.</li>
+<li>Explain what IT infrastructure means.</li>
+<li>Describe how servers, networks, storage, and applications work together.</li>
+<li>Explain virtualization.</li>
+<li>Explain what a virtual machine (VM) is.</li>
+<li>Explain why organizations use virtualization.</li>
+<li>Define cloud computing.</li>
+<li>Distinguish between on-premises and cloud infrastructure.</li>
+<li>Explain IaaS, PaaS, and SaaS.</li>
+<li>Describe how cloud computing changes IT management.</li>
+<li>Connect today's concepts to the Day 1 and Day 2 mental models.</li>
+</ol>
+<hr />
+<h1 id="1-the-big-picture">1. The Big Picture</h1>
+<p>On Day 1, we looked at IT as an ecosystem:</p>
+<p><strong>People → Processes → Applications → Data → Technology</strong></p>
+<p>On Day 2, we zoomed in on an individual computer:</p>
+<p><strong>User → Application → Operating System → CPU/RAM/Storage → Hardware</strong></p>
+<p>Today we're going to zoom back out.</p>
+<p>Most modern applications aren't running entirely on your laptop. When you use a website or enterprise application, your computer is usually communicating with other computers.</p>
+<p>A simplified example:</p>
+<p><strong>Laptop → Network → Application Server → Database Server → Storage</strong></p>
+<p>This is where the concept of <strong>IT infrastructure</strong> becomes important.</p>
+<h3 id="it-infrastructure">IT infrastructure</h3>
+<p>IT infrastructure is the collection of technology resources that allow an organization's applications and services to operate.</p>
+<p>It can include:</p>
+<ul>
+<li>Servers</li>
+<li>Networks</li>
+<li>Storage</li>
+<li>Databases</li>
+<li>Operating systems</li>
+<li>Virtual machines</li>
+<li>Cloud services</li>
+<li>Data centers</li>
+<li>Security systems</li>
+<li>Backup systems</li>
+<li>Monitoring systems</li>
+<li>Identity and access systems</li>
+</ul>
+<p>Think of infrastructure as the <strong>foundation that applications and business processes depend on</strong>.</p>
+<hr />
+<h1 id="2-what-is-a-server">2. What Is a Server?</h1>
+<p>A <strong>server</strong> is a computer or software system that provides a service or resource to other computers or applications.</p>
+<p>The computer requesting the service is generally called the <strong>client</strong>.</p>
+<p>A simple model is:</p>
+<p><strong>Client → Request → Server → Response → Client</strong></p>
+<p>For example, when you open a website:</p>
+<ol>
+<li>Your computer sends a request.</li>
+<li>A server receives the request.</li>
+<li>The server processes it.</li>
+<li>The server sends information back.</li>
+<li>Your browser displays the result.</li>
+</ol>
+<p>The important thing to understand is that <strong>"server" describes a role</strong>.</p>
+<p>A server doesn't necessarily have to look like a giant computer sitting in a data center.</p>
+<p>A server could be:</p>
+<ul>
+<li>A physical computer</li>
+<li>A virtual machine</li>
+<li>A cloud resource</li>
+<li>A software application running on a computer</li>
+</ul>
+<hr />
+<h1 id="3-client-vs-server">3. Client vs. Server</h1>
+<p>The simplest distinction is:</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requests services</td>
+<td>Provides services</td>
+</tr>
+<tr>
+<td>Usually used directly by a person</td>
+<td>Usually provides services to other systems</td>
+</tr>
+<tr>
+<td>Laptop</td>
+<td>Application server</td>
+</tr>
+<tr>
+<td>Smartphone</td>
+<td>Database server</td>
+</tr>
+<tr>
+<td>Web browser</td>
+<td>Web server</td>
+</tr>
+<tr>
+<td>Mobile app</td>
+<td>File server</td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<p>When you use an analytics application:</p>
+<p><strong>Your laptop = client</strong></p>
+<p><strong>Analytics application server = server</strong></p>
+<p><strong>Database server = server</strong></p>
+<p>The client might request:</p>
+<blockquote>
+<p>"Give me the savings opportunities for Company A."</p>
+</blockquote>
+<p>The application server processes the request and may ask the database server for the required data.</p>
+<hr />
+<h1 id="4-a-server-doesnt-have-to-be-a-giant-computer">4. A Server Doesn't Have to Be a Giant Computer</h1>
+<p>This is an important misconception to avoid.</p>
+<p>You might imagine a server as a large physical machine like this:</p>
+<p><strong>Physical Server → Application</strong></p>
+<p>But modern IT environments often look more like:</p>
+<p><strong>Physical Server → Virtual Machine → Application</strong></p>
+<p>Or:</p>
+<p><strong>Cloud Provider → Virtual Server → Application</strong></p>
+<p>A virtual machine can perform the role of a server just like a physical computer can.</p>
+<p>This becomes extremely important when we discuss <strong>virtualization</strong>.</p>
+<hr />
+<h1 id="5-common-types-of-servers">5. Common Types of Servers</h1>
+<p>Different servers perform different jobs.</p>
+<h2 id="web-server">Web Server</h2>
+<p>A <strong>web server</strong> provides web content and handles web requests.</p>
+<p>For example:</p>
+<p><strong>Browser → Web Server</strong></p>
+<p>The web server might return:</p>
+<ul>
+<li>HTML</li>
+<li>Images</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Other web resources</li>
+</ul>
+<hr />
+<h2 id="application-server">Application Server</h2>
+<p>An <strong>application server</strong> runs application logic.</p>
+<p>For example, your financial analytics application might contain logic such as:</p>
+<blockquote>
+<p>Find purchasing patterns that could generate savings.</p>
+</blockquote>
+<p>The application server could perform that processing.</p>
+<hr />
+<h2 id="database-server">Database Server</h2>
+<p>A <strong>database server</strong> stores and retrieves data.</p>
+<p>For example:</p>
+<p><strong>Application → Database Server</strong></p>
+<p>The application might ask:</p>
+<blockquote>
+<p>Give me all savings opportunities for CompanyID 123.</p>
+</blockquote>
+<p>The database server retrieves the appropriate data.</p>
+<hr />
+<h2 id="file-server">File Server</h2>
+<p>A <strong>file server</strong> provides centralized access to files.</p>
+<p>Organizations might use file servers to store:</p>
+<ul>
+<li>Documents</li>
+<li>Spreadsheets</li>
+<li>Reports</li>
+<li>Shared files</li>
+<li>Images</li>
+</ul>
+<hr />
+<h2 id="authentication-server">Authentication Server</h2>
+<p>An <strong>authentication server</strong> helps determine whether a user is who they claim to be.</p>
+<p>For example:</p>
+<p><strong>User → Login → Authentication System</strong></p>
+<p>The authentication system may verify:</p>
+<ul>
+<li>Username</li>
+<li>Password</li>
+<li>MFA</li>
+<li>Identity credentials</li>
+</ul>
+<p>This connects directly to cybersecurity, which we'll study later.</p>
+<hr />
+<h1 id="6-what-is-it-infrastructure">6. What Is IT Infrastructure?</h1>
+<p><strong>IT infrastructure</strong> is the underlying technology environment that supports an organization's applications and services.</p>
+<p>Think about a hospital or healthcare company.</p>
+<p>An application might appear simple to the user:</p>
+<p><strong>User → Healthcare Application</strong></p>
+<p>But underneath it could involve:</p>
+<p><strong>User → Laptop → Network → Application Server → Database → Storage → Backup → Security → Monitoring</strong></p>
+<p>All of those supporting components are part of the broader infrastructure.</p>
+<h3 id="infrastructure-can-include">Infrastructure can include:</h3>
+<ul>
+<li>Physical servers</li>
+<li>Virtual machines</li>
+<li>Networks</li>
+<li>Storage</li>
+<li>Databases</li>
+<li>Operating systems</li>
+<li>Data centers</li>
+<li>Cloud services</li>
+<li>Backup systems</li>
+<li>Security systems</li>
+<li>Monitoring tools</li>
+<li>Identity systems</li>
+</ul>
+<hr />
+<h1 id="7-infrastructure-vs-application">7. Infrastructure vs. Application</h1>
+<p>This distinction is worth learning.</p>
+<p>An <strong>application</strong> performs a task for users.</p>
+<p><strong>Infrastructure provides the resources that allow the application to operate.</strong></p>
+<p>A useful analogy is a restaurant.</p>
+<p>The restaurant's ordering application might be like the <strong>restaurant's menu and ordering process</strong>.</p>
+<p>Infrastructure is more like:</p>
+<ul>
+<li>Building</li>
+<li>Electricity</li>
+<li>Kitchen</li>
+<li>Refrigeration</li>
+<li>Plumbing</li>
+<li>Equipment</li>
+</ul>
+<p>The customer interacts primarily with the restaurant's services.</p>
+<p>They don't necessarily think about the infrastructure making those services possible.</p>
+<p>The same thing happens in IT.</p>
+<p>Users interact with applications.</p>
+<p>IT infrastructure supports those applications behind the scenes.</p>
+<hr />
+<h1 id="8-on-premises-infrastructure">8. On-Premises Infrastructure</h1>
+<p><strong>On-premises</strong> means an organization owns or directly operates its infrastructure in its own facilities or controlled environment.</p>
+<p>For example:</p>
+<p><strong>Company → Data Center → Physical Servers</strong></p>
+<p>The organization might be responsible for:</p>
+<ul>
+<li>Buying servers</li>
+<li>Installing servers</li>
+<li>Installing operating systems</li>
+<li>Maintaining hardware</li>
+<li>Replacing failed components</li>
+<li>Managing networking</li>
+<li>Managing storage</li>
+<li>Managing databases</li>
+<li>Managing security</li>
+<li>Providing backups</li>
+<li>Monitoring systems</li>
+<li>Providing electricity and cooling</li>
+</ul>
+<p>This can be expensive and complex.</p>
+<hr />
+<h1 id="9-what-is-a-data-center">9. What Is a Data Center?</h1>
+<p>A <strong>data center</strong> is a facility designed to house and operate IT infrastructure.</p>
+<p>A data center may contain:</p>
+<ul>
+<li>Servers</li>
+<li>Storage systems</li>
+<li>Network equipment</li>
+<li>Power systems</li>
+<li>Cooling systems</li>
+<li>Physical security</li>
+<li>Backup power</li>
+<li>Fire suppression systems</li>
+<li>Monitoring systems</li>
+</ul>
+<p>Large organizations may operate their own data centers.</p>
+<p>However, many organizations instead use cloud providers that operate enormous data centers on their behalf.</p>
+<hr />
+<h1 id="10-why-do-organizations-use-servers">10. Why Do Organizations Use Servers?</h1>
+<p>Servers provide several important advantages.</p>
+<h3 id="centralization">Centralization</h3>
+<p>Instead of storing everything on individual employee computers, organizations can centralize services.</p>
+<h3 id="shared-resources">Shared Resources</h3>
+<p>Many users can use the same application or service.</p>
+<h3 id="centralized-data">Centralized Data</h3>
+<p>Data can be stored in controlled systems rather than scattered across individual devices.</p>
+<h3 id="security">Security</h3>
+<p>Organizations can apply centralized security controls.</p>
+<h3 id="management">Management</h3>
+<p>IT teams can manage systems centrally.</p>
+<h3 id="backup-and-recovery">Backup and Recovery</h3>
+<p>Centralized systems can make backup and recovery easier to manage.</p>
+<h3 id="controlled-access">Controlled Access</h3>
+<p>Organizations can determine which users are allowed to access which systems and data.</p>
+<hr />
+<h1 id="11-what-is-virtualization">11. What Is Virtualization?</h1>
+<p><strong>Virtualization</strong> is the process of creating virtual versions of computing resources.</p>
+<p>One of the most important examples is a <strong>virtual machine</strong>.</p>
+<p>Instead of having:</p>
+<p><strong>Physical Server → One Computer</strong></p>
+<p>You can have:</p>
+<p><strong>Physical Server → VM 1 + VM 2 + VM 3 + VM 4</strong></p>
+<p>Each VM behaves like an independent computer.</p>
+<p>This allows one physical machine to support multiple logical computers.</p>
+<hr />
+<h1 id="12-what-is-a-virtual-machine">12. What Is a Virtual Machine?</h1>
+<p>A <strong>virtual machine (VM)</strong> is a software-based computer that runs on physical hardware.</p>
+<p>A VM can have its own:</p>
+<ul>
+<li>Operating system</li>
+<li>CPU resources</li>
+<li>RAM allocation</li>
+<li>Storage</li>
+<li>Applications</li>
+<li>Network configuration</li>
+</ul>
+<p>For example:</p>
+<p><strong>Physical Server</strong></p>
+<p>→ Windows VM<br />
+→ Linux VM<br />
+→ Database VM<br />
+→ Application VM</p>
+<p>From the perspective of the software running inside the VM, it behaves much like a normal computer.</p>
+<hr />
+<h1 id="13-why-use-virtualization">13. Why Use Virtualization?</h1>
+<p>Virtualization provides several important advantages.</p>
+<h2 id="better-hardware-utilization">Better Hardware Utilization</h2>
+<p>Without virtualization, a physical server might use only a fraction of its available resources.</p>
+<p>Virtualization allows multiple workloads to share the same physical machine.</p>
+<h2 id="isolation">Isolation</h2>
+<p>Different VMs can operate independently.</p>
+<p>A problem in one VM doesn't necessarily bring down every other VM.</p>
+<h2 id="flexibility">Flexibility</h2>
+<p>IT teams can create, configure, move, and remove virtual machines more easily than physical machines.</p>
+<h2 id="cost-efficiency">Cost Efficiency</h2>
+<p>Fewer physical servers can mean:</p>
+<ul>
+<li>Less hardware</li>
+<li>Less electricity</li>
+<li>Less cooling</li>
+<li>Less physical space</li>
+<li>Less maintenance</li>
+</ul>
+<p>This is one reason virtualization became such an important part of modern IT infrastructure.</p>
+<hr />
+<h1 id="14-virtualization-mental-model">14. Virtualization Mental Model</h1>
+<p>Think of virtualization as separating the <strong>logical computer</strong> from the <strong>physical hardware</strong>.</p>
+<p>Instead of:</p>
+<p><strong>Physical Hardware → One Computer</strong></p>
+<p>you can have:</p>
+<p><strong>Physical Hardware → Virtualization → Multiple Virtual Computers</strong></p>
+<p>This creates an important abstraction between applications and physical hardware.</p>
+<p>We'll come back to the concept of <strong>abstraction</strong> later.</p>
+<hr />
+<h1 id="15-what-is-cloud-computing">15. What Is Cloud Computing?</h1>
+<p><strong>Cloud computing</strong> means using computing resources and services provided over a network, typically the Internet.</p>
+<p>Instead of an organization buying and operating every physical server itself, it can obtain computing resources from a cloud provider.</p>
+<p>For example:</p>
+<p><strong>Company → Cloud Provider → Computing Resources</strong></p>
+<p>Common cloud providers include:</p>
+<ul>
+<li>Microsoft Azure</li>
+<li>Amazon Web Services (AWS)</li>
+<li>Google Cloud</li>
+</ul>
+<p>The cloud provider operates enormous amounts of infrastructure.</p>
+<p>Organizations can consume those resources without necessarily owning the underlying physical hardware.</p>
+<hr />
+<h1 id="16-cloud-does-not-mean-the-internet">16. Cloud Does Not Mean "The Internet"</h1>
+<p>This distinction is important.</p>
+<p>The <strong>Internet</strong> is a global network connecting computers and networks.</p>
+<p>The <strong>cloud</strong> refers to computing resources and services delivered over networks.</p>
+<p>For example:</p>
+<p><strong>Internet</strong></p>
+<p>= the network used to connect systems.</p>
+<p><strong>Cloud</strong></p>
+<p>= computing resources and services you access through that network.</p>
+<p>Cloud providers can provide:</p>
+<ul>
+<li>Computing</li>
+<li>Storage</li>
+<li>Databases</li>
+<li>Networking</li>
+<li>Security services</li>
+<li>AI services</li>
+<li>Monitoring</li>
+<li>Backup services</li>
+</ul>
+<hr />
+<h1 id="17-on-premises-vs-cloud">17. On-Premises vs. Cloud</h1>
+<p>Consider a company that needs a database.</p>
+<h3 id="on-premises">On-Premises</h3>
+<p>The company might:</p>
+<ol>
+<li>Buy a physical server.</li>
+<li>Install it in a data center.</li>
+<li>Install the operating system.</li>
+<li>Install database software.</li>
+<li>Configure storage.</li>
+<li>Configure networking.</li>
+<li>Maintain the hardware.</li>
+<li>Monitor the system.</li>
+<li>Handle backups.</li>
+<li>Replace failed components.</li>
+</ol>
+<h3 id="cloud">Cloud</h3>
+<p>The company might instead:</p>
+<ol>
+<li>Select a cloud database service.</li>
+<li>Configure the database.</li>
+<li>Set permissions.</li>
+<li>Connect the application.</li>
+<li>Load the data.</li>
+<li>Monitor the service.</li>
+</ol>
+<p>The cloud provider handles much of the underlying physical infrastructure.</p>
+<p>However, <strong>cloud does not mean the customer has no responsibilities</strong>.</p>
+<p>The customer may still be responsible for:</p>
+<ul>
+<li>Data</li>
+<li>Permissions</li>
+<li>Application configuration</li>
+<li>Database design</li>
+<li>Business rules</li>
+<li>Security settings</li>
+<li>User access</li>
+</ul>
+<p>This distinction becomes very important in cybersecurity.</p>
+<hr />
+<h1 id="18-cloud-providers">18. Cloud Providers</h1>
+<p>The three major cloud providers you'll commonly encounter are:</p>
+<h3 id="microsoft-azure">Microsoft Azure</h3>
+<p>Microsoft's cloud computing platform.</p>
+<h3 id="amazon-web-services">Amazon Web Services</h3>
+<p>Usually referred to as <strong>AWS</strong>.</p>
+<h3 id="google-cloud">Google Cloud</h3>
+<p>Google's cloud computing platform.</p>
+<p>All three provide many categories of services, including:</p>
+<ul>
+<li>Compute</li>
+<li>Storage</li>
+<li>Databases</li>
+<li>Networking</li>
+<li>Security</li>
+<li>AI</li>
+<li>Analytics</li>
+</ul>
+<p>You don't need to memorize specific services yet.</p>
+<p>For now, understand the basic concept:</p>
+<blockquote>
+<p><strong>Cloud providers allow organizations to consume computing infrastructure and services without owning all of the physical infrastructure themselves.</strong></p>
+</blockquote>
+<hr />
+<h1 id="19-iaas-infrastructure-as-a-service">19. IaaS — Infrastructure as a Service</h1>
+<p><strong>IaaS</strong> stands for <strong>Infrastructure as a Service</strong>.</p>
+<p>The provider gives you fundamental infrastructure resources.</p>
+<p>Examples include:</p>
+<ul>
+<li>Virtual machines</li>
+<li>Storage</li>
+<li>Networking</li>
+<li>Computing resources</li>
+</ul>
+<p>The customer generally has more responsibility.</p>
+<p>A simplified model:</p>
+<p><strong>Provider:</strong> Physical hardware + virtualization</p>
+<p><strong>Customer:</strong> Operating system + applications + data</p>
+<h3 id="mental-shortcut">Mental shortcut</h3>
+<p><strong>IaaS = "Give me infrastructure."</strong></p>
+<hr />
+<h1 id="20-paas-platform-as-a-service">20. PaaS — Platform as a Service</h1>
+<p><strong>PaaS</strong> stands for <strong>Platform as a Service</strong>.</p>
+<p>The provider manages more of the underlying infrastructure and provides an environment where developers can build and run applications.</p>
+<p>A simplified model:</p>
+<p><strong>Provider:</strong> Infrastructure + operating environment/platform</p>
+<p><strong>Customer:</strong> Application + data</p>
+<h3 id="mental-shortcut_1">Mental shortcut</h3>
+<p><strong>PaaS = "Give me an environment where I can build and run my application."</strong></p>
+<hr />
+<h1 id="21-saas-software-as-a-service">21. SaaS — Software as a Service</h1>
+<p><strong>SaaS</strong> stands for <strong>Software as a Service</strong>.</p>
+<p>The provider delivers a completed software application.</p>
+<p>The customer generally uses the application rather than managing the infrastructure underneath it.</p>
+<p>Examples include:</p>
+<ul>
+<li>Web-based email</li>
+<li>CRM systems</li>
+<li>Collaboration applications</li>
+<li>Office applications</li>
+<li>Enterprise software</li>
+</ul>
+<h3 id="mental-shortcut_2">Mental shortcut</h3>
+<p><strong>SaaS = "Give me the software."</strong></p>
+<hr />
+<h1 id="22-iaas-vs-paas-vs-saas">22. IaaS vs. PaaS vs. SaaS</h1>
+<p>The easiest way to understand the three models is to think about <strong>who manages what</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Provider Manages</th>
+<th>Customer Manages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IaaS</td>
+<td>Physical infrastructure, virtualization</td>
+<td>OS, applications, data</td>
+</tr>
+<tr>
+<td>PaaS</td>
+<td>Infrastructure + platform</td>
+<td>Application, data</td>
+</tr>
+<tr>
+<td>SaaS</td>
+<td>Infrastructure + platform + application</td>
+<td>Primarily configuration, users, data</td>
+</tr>
+</tbody>
+</table>
+<p>The general pattern is:</p>
+<p><strong>IaaS → More customer responsibility</strong></p>
+<p><strong>PaaS → Shared responsibility</strong></p>
+<p><strong>SaaS → More provider responsibility</strong></p>
+<p>Don't worry about memorizing every boundary yet.</p>
+<p>The important concept is that <strong>cloud services exist at different levels of abstraction</strong>.</p>
+<hr />
+<h1 id="23-real-world-example-financial-analytics-application">23. Real-World Example: Financial Analytics Application</h1>
+<p>Imagine an organization using a financial analytics application.</p>
+<p>The user might see:</p>
+<p><strong>User → Analytics Application</strong></p>
+<p>But behind the scenes:</p>
+<p><strong>User → Laptop → Internet/Corporate Network → Cloud Infrastructure → Application → Database → Data</strong></p>
+<p>The cloud environment might contain:</p>
+<ul>
+<li>Virtual machines</li>
+<li>Application servers</li>
+<li>Database servers</li>
+<li>Storage</li>
+<li>Networking</li>
+<li>Security systems</li>
+<li>Monitoring</li>
+<li>Backup systems</li>
+</ul>
+<p>The user doesn't need to understand all of that to use the application.</p>
+<p>This is one of the major benefits of abstraction.</p>
+<hr />
+<h1 id="24-what-is-abstraction">24. What Is Abstraction?</h1>
+<p><strong>Abstraction</strong> means hiding unnecessary implementation details so that users or systems can interact with something at a higher level.</p>
+<p>Consider your laptop.</p>
+<p>You might use:</p>
+<p><strong>Microsoft Word → Operating System → Hardware</strong></p>
+<p>You don't need to manually tell the CPU:</p>
+<blockquote>
+<p>"Move these bytes from this memory location and perform this instruction."</p>
+</blockquote>
+<p>The operating system and hardware abstraction handle those details.</p>
+<p>Similarly, a cloud application might look like:</p>
+<p><strong>User → Application</strong></p>
+<p>But underneath:</p>
+<p><strong>Application → VM → Physical Server → Data Center</strong></p>
+<p>The user interacts with the higher-level abstraction.</p>
+<hr />
+<h1 id="25-availability-and-redundancy">25. Availability and Redundancy</h1>
+<p>Organizations often don't want an application to stop working because one server fails.</p>
+<p>For example:</p>
+<p><strong>Application Server 1</strong></p>
+<p><strong>Application Server 2</strong></p>
+<p><strong>Application Server 3</strong></p>
+<p>If Server 1 fails, the other servers may continue serving users.</p>
+<p>This is an example of <strong>redundancy</strong>.</p>
+<p>Redundancy means having additional components or resources available so that the failure of one component does not necessarily cause the entire system to fail.</p>
+<p>Redundancy can exist at many levels:</p>
+<ul>
+<li>Multiple servers</li>
+<li>Multiple network connections</li>
+<li>Backup storage</li>
+<li>Backup power</li>
+<li>Replicated databases</li>
+<li>Multiple data centers</li>
+</ul>
+<p>This concept will become increasingly important when we study networking, cloud computing, and cybersecurity.</p>
+<hr />
+<h1 id="26-infrastructure-as-a-system">26. Infrastructure as a System</h1>
+<p>Let's combine everything we've learned.</p>
+<p>A simplified modern application might look like this:</p>
+<p><strong>User</strong></p>
+<p>↓  </p>
+<p><strong>Client Device</strong></p>
+<p>↓  </p>
+<p><strong>Network</strong></p>
+<p>↓  </p>
+<p><strong>Web/Application Server</strong></p>
+<p>↓  </p>
+<p><strong>Database Server</strong></p>
+<p>↓  </p>
+<p><strong>Storage</strong></p>
+<p>And underneath those systems:</p>
+<p><strong>Virtualization</strong></p>
+<p>↓  </p>
+<p><strong>Physical Servers</strong></p>
+<p>↓  </p>
+<p><strong>Data Center</strong></p>
+<p>Or, in a cloud environment:</p>
+<p><strong>Cloud Provider</strong></p>
+<p>↓  </p>
+<p><strong>Compute / Database / Storage / Networking</strong></p>
+<p>↓  </p>
+<p><strong>Application</strong></p>
+<p>↓  </p>
+<p><strong>User</strong></p>
+<p>This is the architecture mindset we're beginning to develop.</p>
+<hr />
+<h1 id="27-connecting-days-1-2-and-3">27. Connecting Days 1, 2, and 3</h1>
+<p>This is one of the most important sections of today's lesson.</p>
+<h2 id="day-1-what-is-it">Day 1 — What Is IT?</h2>
+<p>We learned:</p>
+<p><strong>People + Processes + Applications + Data + Technology</strong></p>
+<p>We were looking at IT from an organizational perspective.</p>
+<hr />
+<h2 id="day-2-whats-inside-a-computer">Day 2 — What's Inside a Computer?</h2>
+<p>We learned:</p>
+<p><strong>Application → Operating System → CPU/RAM/Storage → Hardware</strong></p>
+<p>We were looking inside an individual computer.</p>
+<hr />
+<h2 id="day-3-how-do-organizations-build-larger-systems">Day 3 — How Do Organizations Build Larger Systems?</h2>
+<p>Now we're looking at:</p>
+<p><strong>User → Client Device → Network → Application Server → Database Server → Storage</strong></p>
+<p>And underneath:</p>
+<p><strong>Physical Hardware → Virtualization → Virtual Machines → Cloud Services</strong></p>
+<p>We're moving from:</p>
+<p><strong>Individual Computer</strong></p>
+<p>to</p>
+<p><strong>IT Systems</strong></p>
+<p>to</p>
+<p><strong>IT Infrastructure</strong></p>
+<p>That progression is extremely important for the rest of this course.</p>
+<hr />
+<h1 id="28-day-3-vocabulary">28. Day 3 Vocabulary</h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Server</strong></td>
+<td>System that provides services or resources to other systems</td>
+</tr>
+<tr>
+<td><strong>Client</strong></td>
+<td>System that requests or consumes services</td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td>Technology resources supporting applications and services</td>
+</tr>
+<tr>
+<td><strong>Data Center</strong></td>
+<td>Facility designed to house and operate IT infrastructure</td>
+</tr>
+<tr>
+<td><strong>On-Premises</strong></td>
+<td>Infrastructure owned/operated directly by an organization</td>
+</tr>
+<tr>
+<td><strong>Virtualization</strong></td>
+<td>Creating virtual versions of computing resources</td>
+</tr>
+<tr>
+<td><strong>Virtual Machine (VM)</strong></td>
+<td>Software-based computer running on physical hardware</td>
+</tr>
+<tr>
+<td><strong>Cloud Computing</strong></td>
+<td>Computing resources/services delivered over a network</td>
+</tr>
+<tr>
+<td><strong>IaaS</strong></td>
+<td>Infrastructure as a Service</td>
+</tr>
+<tr>
+<td><strong>PaaS</strong></td>
+<td>Platform as a Service</td>
+</tr>
+<tr>
+<td><strong>SaaS</strong></td>
+<td>Software as a Service</td>
+</tr>
+<tr>
+<td><strong>Redundancy</strong></td>
+<td>Additional resources that help tolerate failures</td>
+</tr>
+<tr>
+<td><strong>Abstraction</strong></td>
+<td>Hiding implementation details behind a simpler interface</td>
+</tr>
+<tr>
+<td><strong>Web Server</strong></td>
+<td>Provides web resources/services</td>
+</tr>
+<tr>
+<td><strong>Application Server</strong></td>
+<td>Runs application logic</td>
+</tr>
+<tr>
+<td><strong>Database Server</strong></td>
+<td>Stores and retrieves data</td>
+</tr>
+<tr>
+<td><strong>File Server</strong></td>
+<td>Provides centralized file storage/access</td>
+</tr>
+<tr>
+<td><strong>Authentication Server</strong></td>
+<td>Helps verify user identity</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="29-exercise-trace-a-web-application">29. Exercise — Trace a Web Application</h1>
+<p>Choose a web application you use regularly.</p>
+<p>It could be:</p>
+<ul>
+<li>Your banking website</li>
+<li>Salesforce</li>
+<li>A healthcare application</li>
+<li>Amazon</li>
+<li>A news website</li>
+<li>A project management tool</li>
+<li>An analytics application</li>
+</ul>
+<p>Then fill out:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Your Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User</td>
+<td></td>
+</tr>
+<tr>
+<td>Client device</td>
+<td></td>
+</tr>
+<tr>
+<td>Application</td>
+<td></td>
+</tr>
+<tr>
+<td>Network</td>
+<td></td>
+</tr>
+<tr>
+<td>Web/Application server</td>
+<td></td>
+</tr>
+<tr>
+<td>Database</td>
+<td></td>
+</tr>
+<tr>
+<td>Storage</td>
+<td></td>
+</tr>
+<tr>
+<td>Virtualization likely involved?</td>
+<td></td>
+</tr>
+<tr>
+<td>Cloud likely involved?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Then answer:</p>
+<h3 id="question-1">Question 1</h3>
+<p>What happens when the user clicks a button that requests new data?</p>
+<p>Try to trace the request from:</p>
+<p><strong>User → Client → Network → Application → Database</strong></p>
+<h3 id="question-2">Question 2</h3>
+<p>What happens if the application server fails?</p>
+<p>Would the entire application necessarily stop working?</p>
+<p>Why or why not?</p>
+<h3 id="challenge-question">Challenge Question</h3>
+<p>Which parts of this architecture are visible to the user?</p>
+<p>Which parts are hidden by abstraction?</p>
+<hr />
+<h1 id="30-day-3-quiz">30. Day 3 Quiz</h1>
+<h2 id="questions">Questions</h2>
+<h3 id="1-what-is-a-server">1. What is a server?</h3>
+<p>A. A computer that must be physically located in a data center<br />
+B. A computer with more than 32 GB of RAM<br />
+C. A system that provides services or resources to other systems<br />
+D. A computer running Windows Server  </p>
+<hr />
+<h3 id="2-which-is-most-likely-acting-as-a-client">2. Which is most likely acting as a client?</h3>
+<p>A. Database server<br />
+B. Application server<br />
+C. Laptop running a web browser<br />
+D. Authentication server  </p>
+<hr />
+<h3 id="3-what-does-it-infrastructure-refer-to">3. What does IT infrastructure refer to?</h3>
+<p>A. Only physical computers<br />
+B. The underlying technology resources supporting applications and services<br />
+C. Only cloud computing<br />
+D. Only networking equipment  </p>
+<hr />
+<h3 id="4-what-is-the-primary-purpose-of-a-database-server">4. What is the primary purpose of a database server?</h3>
+<p>A. Display webpages<br />
+B. Authenticate users<br />
+C. Store and retrieve data<br />
+D. Provide electricity  </p>
+<hr />
+<h3 id="5-what-is-virtualization">5. What is virtualization?</h3>
+<p>A. Converting physical files into digital files<br />
+B. Using one physical computer to support multiple virtual computers<br />
+C. Connecting computers to the Internet<br />
+D. Encrypting network traffic  </p>
+<hr />
+<h3 id="6-what-is-a-virtual-machine">6. What is a virtual machine?</h3>
+<p>A. A physical server with multiple processors<br />
+B. A software-based computer running on physical hardware<br />
+C. A cloud provider<br />
+D. A database  </p>
+<hr />
+<h3 id="7-which-is-an-advantage-of-virtualization">7. Which is an advantage of virtualization?</h3>
+<p>A. It eliminates the need for operating systems<br />
+B. It guarantees that hardware can never fail<br />
+C. It can improve utilization of physical hardware<br />
+D. It removes the need for networks  </p>
+<hr />
+<h3 id="8-what-is-cloud-computing">8. What is cloud computing?</h3>
+<p>A. Storing files exclusively on your laptop<br />
+B. Connecting two computers with Ethernet<br />
+C. Using computing resources and services delivered over a network<br />
+D. Using only wireless Internet  </p>
+<hr />
+<h3 id="9-which-cloud-model-provides-basic-infrastructure-resources-such-as-virtual-machines-and-storage">9. Which cloud model provides basic infrastructure resources such as virtual machines and storage?</h3>
+<p>A. SaaS<br />
+B. PaaS<br />
+C. IaaS<br />
+D. DNS  </p>
+<hr />
+<h3 id="10-which-cloud-model-provides-a-completed-software-application">10. Which cloud model provides a completed software application?</h3>
+<p>A. IaaS<br />
+B. PaaS<br />
+C. SaaS<br />
+D. VM  </p>
+<hr />
+<h3 id="11-which-example-best-represents-an-on-premises-environment">11. Which example best represents an on-premises environment?</h3>
+<p>A. A company uses a SaaS CRM application<br />
+B. A company operates physical servers in its own data center<br />
+C. A company rents a cloud database<br />
+D. An employee uses a web browser  </p>
+<hr />
+<h3 id="12-why-might-an-organization-use-redundant-application-servers">12. Why might an organization use redundant application servers?</h3>
+<p>A. To make computers physically smaller<br />
+B. To eliminate databases<br />
+C. To reduce the impact of a server failure<br />
+D. To eliminate operating systems  </p>
+<hr />
+<h3 id="13-which-server-would-most-likely-store-and-retrieve-structured-application-data">13. Which server would most likely store and retrieve structured application data?</h3>
+<p>A. Web server<br />
+B. File server<br />
+C. Database server<br />
+D. Authentication server  </p>
+<hr />
+<h3 id="14-what-is-abstraction">14. What is abstraction?</h3>
+<p>A. Removing hardware from a computer<br />
+B. Hiding implementation details behind a simpler interface<br />
+C. Encrypting data<br />
+D. Replacing a physical server with a laptop  </p>
+<hr />
+<h3 id="15-which-sequence-best-represents-a-simplified-modern-web-application">15. Which sequence best represents a simplified modern web application?</h3>
+<p>A. Database → User → Client → Network → Application<br />
+B. User → Client → Network → Cloud Infrastructure → Application → Database<br />
+C. User → Database → Keyboard → Server<br />
+D. Application → User → Storage → Network  </p>
+<hr />
+<h1 id="31-answer-key">31. Answer Key</h1>
+<h3 id="1-c-system-that-provides-services-or-resources">1. C — System that provides services or resources</h3>
+<p>A server is defined by the service it provides, not by its physical appearance.</p>
+<h3 id="2-c-laptop-running-a-web-browser">2. C — Laptop running a web browser</h3>
+<p>The laptop is requesting services from servers, making it a client.</p>
+<h3 id="3-b-underlying-technology-resources-supporting-applications-and-services">3. B — Underlying technology resources supporting applications and services</h3>
+<p>Infrastructure includes servers, networks, storage, virtualization, cloud services, and related systems.</p>
+<h3 id="4-c-store-and-retrieve-data">4. C — Store and retrieve data</h3>
+<p>That is the primary role of a database server.</p>
+<h3 id="5-b-one-physical-computer-supporting-multiple-virtual-computers">5. B — One physical computer supporting multiple virtual computers</h3>
+<p>This is the core concept behind virtualization.</p>
+<h3 id="6-b-software-based-computer-running-on-physical-hardware">6. B — Software-based computer running on physical hardware</h3>
+<p>A VM behaves like a computer even though it is implemented through software.</p>
+<h3 id="7-c-improve-utilization-of-physical-hardware">7. C — Improve utilization of physical hardware</h3>
+<p>Virtualization allows multiple workloads to share physical resources.</p>
+<h3 id="8-c-computing-resources-and-services-delivered-over-a-network">8. C — Computing resources and services delivered over a network</h3>
+<p>Cloud computing isn't simply "the Internet." It involves computing resources and services delivered through networks.</p>
+<h3 id="9-c-iaas">9. C — IaaS</h3>
+<p>Infrastructure as a Service provides fundamental computing infrastructure such as virtual machines, storage, and networking.</p>
+<h3 id="10-c-saas">10. C — SaaS</h3>
+<p>Software as a Service provides a completed software application.</p>
+<h3 id="11-b-company-operates-physical-servers-in-its-own-data-center">11. B — Company operates physical servers in its own data center</h3>
+<p>That is a classic example of on-premises infrastructure.</p>
+<h3 id="12-c-reduce-the-impact-of-a-server-failure">12. C — Reduce the impact of a server failure</h3>
+<p>Redundant systems help maintain availability when individual components fail.</p>
+<h3 id="13-c-database-server">13. C — Database server</h3>
+<p>Database servers specialize in storing and retrieving structured data.</p>
+<h3 id="14-b-hiding-implementation-details-behind-a-simpler-interface">14. B — Hiding implementation details behind a simpler interface</h3>
+<p>Abstraction lets users interact with systems without needing to understand every underlying technical detail.</p>
+<h3 id="15-b-user-client-network-cloud-infrastructure-application-database">15. B — User → Client → Network → Cloud Infrastructure → Application → Database</h3>
+<p>This represents a simplified version of a modern cloud-based application architecture.</p>
+<hr />
+<h1 id="32-mastery-check">32. Mastery Check</h1>
+<p>Before moving to Day 4, make sure you can answer these <strong>without looking at your notes</strong>.</p>
+<h2 id="servers">Servers</h2>
+<ul>
+<li>What is a server?</li>
+<li>What is a client?</li>
+<li>Why is "server" considered a role rather than a type of physical computer?</li>
+<li>What does a database server do?</li>
+<li>What does an application server do?</li>
+</ul>
+<h2 id="infrastructure">Infrastructure</h2>
+<ul>
+<li>What does IT infrastructure mean?</li>
+<li>What is a data center?</li>
+<li>What does on-premises mean?</li>
+<li>Why do organizations need infrastructure?</li>
+</ul>
+<h2 id="virtualization">Virtualization</h2>
+<ul>
+<li>What is virtualization?</li>
+<li>What is a virtual machine?</li>
+<li>Why would an organization run multiple VMs on one physical server?</li>
+<li>What advantages does virtualization provide?</li>
+</ul>
+<h2 id="cloud_1">Cloud</h2>
+<ul>
+<li>What is cloud computing?</li>
+<li>How is cloud different from the Internet?</li>
+<li>What is the difference between on-premises and cloud?</li>
+<li>What is IaaS?</li>
+<li>What is PaaS?</li>
+<li>What is SaaS?</li>
+<li>Which model generally gives the customer the most responsibility: IaaS or SaaS?</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>Can you trace a request from:</p>
+<p><strong>Laptop → Network → Application Server → Database Server → Storage</strong></p>
+<p>And explain what each component does?</p>
+<h3 id="scoring">Scoring</h3>
+<p><strong>16–20 confident answers:</strong> You're ready for Day 4.</p>
+<p><strong>12–15:</strong> Review virtualization and cloud computing, especially IaaS/PaaS/SaaS.</p>
+<p><strong>Below 12:</strong> Revisit Sections 3–22 before moving forward.</p>
+<hr />
+<h1 id="33-key-takeaway">33. Key Takeaway</h1>
+<p>The biggest idea from Day 3 is:</p>
+<blockquote>
+<p><strong>Applications depend on infrastructure.</strong></p>
+</blockquote>
+<p>A modern application isn't simply a piece of software sitting on someone's laptop.</p>
+<p>It may depend on:</p>
+<p><strong>Users</strong></p>
+<p>↓  </p>
+<p><strong>Client Devices</strong></p>
+<p>↓  </p>
+<p><strong>Networks</strong></p>
+<p>↓  </p>
+<p><strong>Application Servers</strong></p>
+<p>↓  </p>
+<p><strong>Database Servers</strong></p>
+<p>↓  </p>
+<p><strong>Storage</strong></p>
+<p>↓  </p>
+<p><strong>Virtual Machines</strong></p>
+<p>↓  </p>
+<p><strong>Physical Infrastructure</strong></p>
+<p>And increasingly:</p>
+<p><strong>Cloud Provider → Infrastructure → Virtualized/Managed Services → Applications → Users</strong></p>
+<h3 id="your-progression-so-far">Your progression so far</h3>
+<p><strong>Day 1 — What is IT?</strong></p>
+<p>People + Processes + Technology + Data</p>
+<p><strong>Day 2 — What's inside a computer?</strong></p>
+<p>Application + OS + CPU + RAM + Storage</p>
+<p><strong>Day 3 — How do organizations build larger systems?</strong></p>
+<p>Clients + Networks + Servers + Infrastructure + Virtualization + Cloud</p>
+<p>You are now moving from understanding <strong>individual computers</strong> to understanding <strong>IT systems and infrastructure</strong>. That foundation will make the upcoming networking, databases, cybersecurity, and software-development topics much easier to understand.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
