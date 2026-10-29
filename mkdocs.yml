@@ -1,11 +1,12 @@
-site_name: Study Guides
+site_name: Study Guide Home
 
 theme:
   name: material
 
 nav:
   - Home: index.md
+
   - Introduction to IT:
-      - Day 1: day-1.md
-      - Day 2: day-2.md
-      - Day 3: day-3.md
+      - What Is Information Technology?: day-1.md
+      - Computer Hardware, Software & Operating Systems: day-2.md
+      - Servers, Infrastructure, Virtualization & Cloud Computing: day-3.md
