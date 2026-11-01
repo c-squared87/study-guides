@@ -7,6 +7,8 @@ nav:
   - Home: index.md
 
   - Introduction to IT:
-      - What Is Information Technology?: day-1.md
-      - Computer Hardware, Software & Operating Systems: day-2.md
-      - Servers, Infrastructure, Virtualization & Cloud Computing: day-3.md
+      - What Is Information Technology?: intro-it/week1/day-1.md
+      - Computer Hardware, Software & Operating Systems: intro-it/week1/day-2.md
+      - Servers, Infrastructure, Virtualization & Cloud Computing: intro-it/week1/day-3.md
+      - Networks, IP Addresses, DNS, Protocols, and How Data Moves: intro-it/week1/day-4.md
+      - How IT Systems Store, Organize, Retrieve, and Exchange Data: intro-it/week1/day-5.md
