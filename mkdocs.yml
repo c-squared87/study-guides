@@ -5,7 +5,8 @@ theme:
 
 nav:
   - Home: index.md
-
+  - Math1001:
+      - Algebraic Foundations, Expressions, Variables, and Like Terms: math-1001/MATH1001 – Day 1 Study Guide.md
   - Introduction to IT:
       - What Is Information Technology?: intro-it/week1/day-1.md
       - Computer Hardware, Software & Operating Systems: intro-it/week1/day-2.md
