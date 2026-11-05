@@ -3,6 +3,13 @@ site_name: Study Guide Home
 theme:
   name: material
 
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+
 nav:
   - Home: index.md
   - Math1001:
