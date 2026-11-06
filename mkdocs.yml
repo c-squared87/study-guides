@@ -9,9 +9,12 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+  - javascripts/quiz-engine.js
 
 nav:
   - Home: index.md
+  - Quizzes: 
+      - Test, Algebra Week 1: quizzes/algebra-week-01.md
   - Math1001:
       - Algebraic Foundations, Expressions, Variables, and Like Terms: math-1001/MATH1001 – Day 1 Study Guide.md
       - Signed Numbers, Fractions, and Algebraic Operations: math-1001/MATH1001_Day_2_Study_Guide.md
