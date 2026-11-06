@@ -1,0 +1,1903 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../day-3/">
+      
+      
+        <link rel="next" href="../day-5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Networks, IP Addresses, DNS, Protocols, and How Data Moves - Study Guide Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/quiz.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wgu-introduction-to-it-day-4-study-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Study Guide Home" class="md-header__button md-logo" aria-label="Study Guide Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Study Guide Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Networks, IP Addresses, DNS, Protocols, and How Data Moves
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Study Guide Home" class="md-nav__button md-logo" aria-label="Study Guide Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Study Guide Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quizzes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quizzes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quizzes/algebra-week-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test, Algebra Week 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math1001
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Math1001
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math-1001/MATH1001%20%E2%80%93%20Day%201%20Study%20Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algebraic Foundations, Expressions, Variables, and Like Terms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math-1001/MATH1001_Day_2_Study_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Signed Numbers, Fractions, and Algebraic Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math-1001/MATH1001_Day_3_Study_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exponents, Radicals, and Order of Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math-1001/MATH1001_Day_4_Study_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solving Linear Equations and Inequalities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math-1001/MATH1001_Day_5_Study_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Applying Algebra, Word Problems, Formulas, and Coordinate Plane Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math-1001/MATH1001_Week_1_Quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1 Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to IT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction to IT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is Information Technology?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Hardware, Software & Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servers, Infrastructure, Virtualization & Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, IP Addresses, DNS, Protocols, and How Data Moves
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks, IP Addresses, DNS, Protocols, and How Data Moves
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#networking-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How IT Systems Store, Organize, Retrieve, and Exchange Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#networking-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="wgu-introduction-to-it-day-4-study-guide">WGU Introduction to IT — Day 4 Study Guide</h1>
+<h2 id="networking-fundamentals">Networking Fundamentals</h2>
+<h3 id="topic">Topic</h3>
+<p><strong>Networks, IP Addresses, DNS, Protocols, and How Data Moves</strong></p>
+<hr />
+<h1 id="day-4-goals">Day 4 Goals</h1>
+<p>By the end of this study session, you should be able to:</p>
+<ol>
+<li>Explain what a computer network is.</li>
+<li>Explain why organizations use networks.</li>
+<li>Distinguish between LANs, WANs, and the Internet.</li>
+<li>Explain the roles of switches and routers.</li>
+<li>Explain what an IP address is.</li>
+<li>Distinguish between private and public IP addresses.</li>
+<li>Explain the basic purpose of DNS.</li>
+<li>Explain what a protocol is.</li>
+<li>Identify common networking protocols such as HTTP, HTTPS, TCP, UDP, and DNS.</li>
+<li>Explain the difference between TCP and UDP at a high level.</li>
+<li>Explain the difference between a MAC address and an IP address.</li>
+<li>Trace a simplified request from a user's computer to a web server.</li>
+<li>Connect networking concepts to the servers, infrastructure, and cloud concepts from Day 3.</li>
+</ol>
+<hr />
+<h1 id="1-the-big-picture">1. The Big Picture</h1>
+<p>On Day 3, we started looking at how computers communicate with servers:</p>
+<p><strong>User → Client → Network → Application Server → Database Server</strong></p>
+<p>Today we're going to focus on the <strong>network</strong> portion of that architecture.</p>
+<p>A network allows computers and other devices to communicate with one another.</p>
+<p>A simplified example:</p>
+<p><strong>Laptop → Wi-Fi → Router → Internet → Web Server</strong></p>
+<p>When you open a website, send an email, or use an enterprise application, information is traveling across one or more networks.</p>
+<p>Networking is therefore one of the fundamental pieces connecting everything we've studied so far.</p>
+<hr />
+<h1 id="2-what-is-a-computer-network">2. What Is a Computer Network?</h1>
+<p>A <strong>computer network</strong> is a collection of connected devices that can communicate and share resources.</p>
+<p>Devices on a network might include:</p>
+<ul>
+<li>Computers</li>
+<li>Servers</li>
+<li>Smartphones</li>
+<li>Printers</li>
+<li>Routers</li>
+<li>Switches</li>
+<li>IoT devices</li>
+<li>Storage systems</li>
+<li>Security devices</li>
+</ul>
+<p>Networks allow devices to:</p>
+<ul>
+<li>Exchange information</li>
+<li>Access applications</li>
+<li>Share files</li>
+<li>Access databases</li>
+<li>Access the Internet</li>
+<li>Share printers</li>
+<li>Communicate with servers</li>
+</ul>
+<p>A network doesn't necessarily mean the Internet.</p>
+<p>A small office network is a network.</p>
+<p>A hospital's internal network is a network.</p>
+<p>A home Wi-Fi network is a network.</p>
+<p>The Internet is a <strong>network of networks</strong>.</p>
+<hr />
+<h1 id="3-why-do-organizations-use-networks">3. Why Do Organizations Use Networks?</h1>
+<p>Networks allow organizations to connect people, systems, and resources.</p>
+<p>Consider a healthcare organization.</p>
+<p>An employee might need to access:</p>
+<ul>
+<li>An internal application</li>
+<li>A database</li>
+<li>A file server</li>
+<li>Email</li>
+<li>A cloud application</li>
+<li>The Internet</li>
+<li>A printer</li>
+</ul>
+<p>Without networking, these systems would largely exist in isolation.</p>
+<p>Networking allows them to communicate.</p>
+<h3 id="example">Example</h3>
+<p>A financial analyst might use:</p>
+<p><strong>Laptop → Corporate Network → Analytics Application → Database</strong></p>
+<p>The network is what allows those components to communicate.</p>
+<hr />
+<h1 id="4-lan-local-area-network">4. LAN — Local Area Network</h1>
+<p>A <strong>LAN</strong>, or <strong>Local Area Network</strong>, connects devices within a relatively limited geographic area.</p>
+<p>Examples include:</p>
+<ul>
+<li>Home network</li>
+<li>Office network</li>
+<li>School network</li>
+<li>Hospital building</li>
+<li>Corporate building</li>
+</ul>
+<p>A typical office might have:</p>
+<p><strong>Laptop</strong></p>
+<p>↓  </p>
+<p><strong>Wi-Fi / Ethernet</strong></p>
+<p>↓  </p>
+<p><strong>Switch</strong></p>
+<p>↓  </p>
+<p><strong>Internal Network</strong></p>
+<p>The LAN allows devices within the organization to communicate.</p>
+<hr />
+<h1 id="5-wan-wide-area-network">5. WAN — Wide Area Network</h1>
+<p>A <strong>WAN</strong>, or <strong>Wide Area Network</strong>, connects networks across larger geographic areas.</p>
+<p>For example, a company might have offices in:</p>
+<ul>
+<li>Tennessee</li>
+<li>Georgia</li>
+<li>Texas</li>
+<li>California</li>
+</ul>
+<p>Those offices could have their own LANs.</p>
+<p>A WAN can connect them:</p>
+<p><strong>Office LAN → WAN → Office LAN</strong></p>
+<p>WANs can span:</p>
+<ul>
+<li>Cities</li>
+<li>States</li>
+<li>Countries</li>
+<li>Continents</li>
+</ul>
+<p>The Internet is an enormous interconnected collection of networks rather than simply one large LAN.</p>
+<hr />
+<h1 id="6-internet-vs-network">6. Internet vs. Network</h1>
+<p>This distinction is important.</p>
+<p>A <strong>network</strong> is any connected group of devices.</p>
+<p>The <strong>Internet</strong> is a massive global network of interconnected networks.</p>
+<p>For example:</p>
+<p><strong>Your Home Network</strong></p>
+<p>↓</p>
+<p><strong>Internet Service Provider</strong></p>
+<p>↓</p>
+<p><strong>Internet</strong></p>
+<p>↓</p>
+<p><strong>Web Server</strong></p>
+<p>Your home network is only one small network participating in the larger Internet.</p>
+<hr />
+<h1 id="7-wired-vs-wireless-networking">7. Wired vs. Wireless Networking</h1>
+<p>Devices can connect to networks in different ways.</p>
+<h2 id="wired">Wired</h2>
+<p>A device connects using a physical cable.</p>
+<p>Common example:</p>
+<p><strong>Ethernet cable</strong></p>
+<p>Advantages can include:</p>
+<ul>
+<li>Consistent connection</li>
+<li>High speeds</li>
+<li>Low interference</li>
+<li>Predictable performance</li>
+</ul>
+<hr />
+<h2 id="wireless">Wireless</h2>
+<p>A device connects using radio signals.</p>
+<p>The most common example is <strong>Wi-Fi</strong>.</p>
+<p>For example:</p>
+<p><strong>Laptop → Wi-Fi → Wireless Access Point</strong></p>
+<p>Wireless networking provides mobility and convenience.</p>
+<p>However, wireless connections can be affected by:</p>
+<ul>
+<li>Distance</li>
+<li>Walls</li>
+<li>Interference</li>
+<li>Signal strength</li>
+<li>Congestion</li>
+</ul>
+<hr />
+<h1 id="8-what-is-a-network-switch">8. What Is a Network Switch?</h1>
+<p>A <strong>network switch</strong> connects devices within a network and helps direct network traffic to the appropriate device.</p>
+<p>Imagine an office with:</p>
+<ul>
+<li>20 laptops</li>
+<li>5 printers</li>
+<li>3 servers</li>
+<li>2 wireless access points</li>
+</ul>
+<p>A switch can connect many of these devices to the same local network.</p>
+<p>A simplified model:</p>
+<p><strong>Laptop A</strong></p>
+<p>↘</p>
+<p><strong>Switch</strong></p>
+<p>↗</p>
+<p><strong>Server</strong></p>
+<p>The switch helps determine where network traffic should go within the local network.</p>
+<hr />
+<h1 id="9-what-is-a-router">9. What Is a Router?</h1>
+<p>A <strong>router</strong> connects different networks and determines where network traffic should be sent.</p>
+<p>For example:</p>
+<p><strong>Home Network → Router → Internet</strong></p>
+<p>The router connects your local network to another network.</p>
+<p>In a corporate environment, routers can connect:</p>
+<p><strong>Corporate Network → Other Networks</strong></p>
+<p>The easiest distinction to remember:</p>
+<blockquote>
+<p><strong>Switches primarily connect devices within a network. Routers connect different networks.</strong></p>
+</blockquote>
+<p>This is a simplification, but it is a useful beginner mental model.</p>
+<hr />
+<h1 id="10-switch-vs-router">10. Switch vs. Router</h1>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Primary Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Switch</strong></td>
+<td>Connects devices within a network</td>
+</tr>
+<tr>
+<td><strong>Router</strong></td>
+<td>Connects different networks</td>
+</tr>
+<tr>
+<td><strong>Wireless Access Point</strong></td>
+<td>Provides wireless network connectivity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example_1">Example</h3>
+<p>A small office might look like:</p>
+<p><strong>Laptop</strong></p>
+<p>↓</p>
+<p><strong>Wi-Fi Access Point</strong></p>
+<p>↓</p>
+<p><strong>Switch</strong></p>
+<p>↓</p>
+<p><strong>Router</strong></p>
+<p>↓</p>
+<p><strong>Internet</strong></p>
+<p>Not every network will physically look exactly like this, but it provides a useful conceptual model.</p>
+<hr />
+<h1 id="11-what-is-an-ip-address">11. What Is an IP Address?</h1>
+<p>An <strong>IP address</strong> is an address used to identify a device or network interface on an IP network.</p>
+<p>Think of an IP address as a <strong>network address</strong>.</p>
+<p>Just as a postal address helps identify where something should be delivered, an IP address helps network traffic determine where information should go.</p>
+<p>An example IPv4 address looks like:</p>
+<p><strong>192.168.1.25</strong></p>
+<p>IPv4 addresses contain four numerical sections separated by periods.</p>
+<p>Another example:</p>
+<p><strong>10.0.0.15</strong></p>
+<p>You don't need to memorize the mathematical details of IPv4 yet.</p>
+<p>The important concept is:</p>
+<blockquote>
+<p><strong>Devices communicating over an IP network need addresses so traffic can be delivered to the correct destination.</strong></p>
+</blockquote>
+<hr />
+<h1 id="12-ipv4-vs-ipv6">12. IPv4 vs. IPv6</h1>
+<p>There are two major versions of the Internet Protocol that you will encounter.</p>
+<h2 id="ipv4">IPv4</h2>
+<p>IPv4 uses addresses such as:</p>
+<p><strong>192.168.1.25</strong></p>
+<p>IPv4 has a limited number of available addresses.</p>
+<hr />
+<h2 id="ipv6">IPv6</h2>
+<p>IPv6 was developed in part because the world needed far more IP addresses.</p>
+<p>An IPv6 address looks very different:</p>
+<p><strong>2001:0db8:85a3::8a2e:0370:7334</strong></p>
+<p>IPv6 addresses are much larger than IPv4 addresses.</p>
+<p>For this course, you don't need to memorize IPv6 addressing rules.</p>
+<p>Just remember:</p>
+<p><strong>IPv4 = older, widely used addressing system</strong></p>
+<p><strong>IPv6 = newer addressing system with a vastly larger address space</strong></p>
+<hr />
+<h1 id="13-private-vs-public-ip-addresses">13. Private vs. Public IP Addresses</h1>
+<p>Not every IP address is directly reachable from the public Internet.</p>
+<h2 id="private-ip-address">Private IP Address</h2>
+<p>A <strong>private IP address</strong> is used within a private network.</p>
+<p>Examples include addresses beginning with:</p>
+<ul>
+<li>10.x.x.x</li>
+<li>172.16.x.x through 172.31.x.x</li>
+<li>192.168.x.x</li>
+</ul>
+<p>For example:</p>
+<p><strong>192.168.1.25</strong></p>
+<p>might identify your laptop within your home network.</p>
+<hr />
+<h2 id="public-ip-address">Public IP Address</h2>
+<p>A <strong>public IP address</strong> can be used for communication across the public Internet.</p>
+<p>Your home network may have a public IP address assigned by your Internet service provider.</p>
+<p>The basic concept is:</p>
+<p><strong>Private IP → Internal network</strong></p>
+<p><strong>Public IP → Public Internet</strong></p>
+<hr />
+<h1 id="14-what-is-dns">14. What Is DNS?</h1>
+<p>One of the most important networking concepts you'll encounter is <strong>DNS</strong>.</p>
+<p>DNS stands for:</p>
+<p><strong>Domain Name System</strong></p>
+<p>DNS translates human-friendly domain names into IP addresses.</p>
+<p>For example, humans prefer to type:</p>
+<p><strong>example.com</strong></p>
+<p>Computers ultimately need network addresses such as:</p>
+<p><strong>93.184.216.34</strong></p>
+<p>DNS helps connect those two concepts.</p>
+<p>A simplified process is:</p>
+<p><strong>Browser → DNS → IP Address</strong></p>
+<p>Then:</p>
+<p><strong>Browser → IP Address → Web Server</strong></p>
+<hr />
+<h1 id="15-why-do-we-need-dns">15. Why Do We Need DNS?</h1>
+<p>Imagine if you had to memorize the IP address of every website you used.</p>
+<p>Instead of typing:</p>
+<p><strong>example.com</strong></p>
+<p>you would have to remember something like:</p>
+<p><strong>93.184.216.34</strong></p>
+<p>And if the website changed servers, the address might change.</p>
+<p>DNS allows humans to use names while the network infrastructure works with addresses.</p>
+<p>Think of DNS as somewhat like a <strong>phone book for domain names and IP addresses</strong>.</p>
+<p>The analogy isn't perfect, but it's useful for understanding the basic purpose.</p>
+<hr />
+<h1 id="16-what-is-a-protocol">16. What Is a Protocol?</h1>
+<p>A <strong>protocol</strong> is a set of rules that defines how systems communicate.</p>
+<p>Imagine two people trying to have a conversation.</p>
+<p>They need some shared understanding about:</p>
+<ul>
+<li>Language</li>
+<li>Timing</li>
+<li>Meaning</li>
+<li>Structure</li>
+</ul>
+<p>Computers need similar rules.</p>
+<p>Networking protocols define things such as:</p>
+<ul>
+<li>How information is formatted</li>
+<li>How it is transmitted</li>
+<li>How systems identify one another</li>
+<li>How errors are handled</li>
+<li>How communication begins and ends</li>
+</ul>
+<p>Protocols allow devices built by different companies to communicate consistently.</p>
+<hr />
+<h1 id="17-common-networking-protocols">17. Common Networking Protocols</h1>
+<p>There are many networking protocols.</p>
+<p>You don't need to memorize all of them today.</p>
+<p>Focus on these:</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Basic Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTTP</strong></td>
+<td>Web communication</td>
+</tr>
+<tr>
+<td><strong>HTTPS</strong></td>
+<td>Secure web communication</td>
+</tr>
+<tr>
+<td><strong>DNS</strong></td>
+<td>Domain name resolution</td>
+</tr>
+<tr>
+<td><strong>TCP</strong></td>
+<td>Reliable transport of data</td>
+</tr>
+<tr>
+<td><strong>UDP</strong></td>
+<td>Faster, connectionless transport</td>
+</tr>
+<tr>
+<td><strong>IP</strong></td>
+<td>Addressing and routing network traffic</td>
+</tr>
+</tbody>
+</table>
+<p>These protocols work at different layers of networking.</p>
+<p>For now, focus on their <strong>purpose</strong> rather than memorizing every technical detail.</p>
+<hr />
+<h1 id="18-http">18. HTTP</h1>
+<p><strong>HTTP</strong> stands for:</p>
+<p><strong>Hypertext Transfer Protocol</strong></p>
+<p>HTTP is one of the primary protocols used for communication between web browsers and web servers.</p>
+<p>For example:</p>
+<p><strong>Browser → HTTP Request → Web Server</strong></p>
+<p>The server responds:</p>
+<p><strong>Web Server → HTTP Response → Browser</strong></p>
+<p>This is part of how web applications work.</p>
+<hr />
+<h1 id="19-https">19. HTTPS</h1>
+<p><strong>HTTPS</strong> is HTTP with security provided through encryption using <strong>TLS</strong>.</p>
+<p>You will commonly see:</p>
+<p><strong>https://</strong></p>
+<p>instead of:</p>
+<p><strong>http://</strong></p>
+<p>HTTPS helps protect information traveling between a client and a web server.</p>
+<p>For example, when logging into a banking website, you don't want your username and password traveling across the network as readable text.</p>
+<p>HTTPS helps protect that communication.</p>
+<p>We'll study encryption and cybersecurity in more depth later.</p>
+<p>For now:</p>
+<blockquote>
+<p><strong>HTTP = web communication</strong></p>
+<p><strong>HTTPS = secure web communication</strong></p>
+</blockquote>
+<hr />
+<h1 id="20-tcp">20. TCP</h1>
+<p><strong>TCP</strong>, or <strong>Transmission Control Protocol</strong>, provides reliable communication between systems.</p>
+<p>TCP is designed to make sure data is delivered reliably and in the correct order.</p>
+<p>If some information is lost, TCP can help detect the problem and retransmit it.</p>
+<p>Think of TCP as prioritizing:</p>
+<p><strong>Reliability</strong></p>
+<p>This is useful for things such as:</p>
+<ul>
+<li>Web applications</li>
+<li>File transfers</li>
+<li>Email</li>
+<li>Database communication</li>
+</ul>
+<hr />
+<h1 id="21-udp">21. UDP</h1>
+<p><strong>UDP</strong>, or <strong>User Datagram Protocol</strong>, takes a different approach.</p>
+<p>UDP does not provide the same level of reliability and connection management as TCP.</p>
+<p>That can make it faster and more efficient for certain types of communication.</p>
+<p>UDP can be useful for:</p>
+<ul>
+<li>Streaming</li>
+<li>Voice communication</li>
+<li>Online gaming</li>
+<li>Real-time applications</li>
+</ul>
+<p>For some applications, receiving information quickly is more important than guaranteeing that every packet arrives perfectly.</p>
+<h3 id="simplified-comparison">Simplified comparison</h3>
+<p><strong>TCP → Reliability</strong></p>
+<p><strong>UDP → Speed / lower overhead</strong></p>
+<p>This is a simplification, but it is the right mental model for this stage of your learning.</p>
+<hr />
+<h1 id="22-tcp-vs-udp">22. TCP vs. UDP</h1>
+<table>
+<thead>
+<tr>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reliable</td>
+<td>Less reliable</td>
+</tr>
+<tr>
+<td>Connection-oriented</td>
+<td>Connectionless</td>
+</tr>
+<tr>
+<td>Tracks delivery</td>
+<td>Does not provide the same delivery guarantees</td>
+</tr>
+<tr>
+<td>Retransmits lost data</td>
+<td>Does not automatically retransmit in the same way</td>
+</tr>
+<tr>
+<td>More overhead</td>
+<td>Lower overhead</td>
+</tr>
+<tr>
+<td>Useful when accuracy matters</td>
+<td>Useful when speed matters</td>
+</tr>
+</tbody>
+</table>
+<p>You don't need to memorize every technical difference yet.</p>
+<p>The key idea is:</p>
+<blockquote>
+<p><strong>TCP emphasizes reliable delivery. UDP emphasizes speed and low overhead.</strong></p>
+</blockquote>
+<hr />
+<h1 id="23-what-is-a-mac-address">23. What Is a MAC Address?</h1>
+<p>A <strong>MAC address</strong> is a hardware/network interface identifier associated with a network interface.</p>
+<p>A MAC address might look something like:</p>
+<p><strong>00:1A:2B:3C:4D:5E</strong></p>
+<p>MAC addresses operate at a different level from IP addresses.</p>
+<p>For now, think of the difference this way:</p>
+<p><strong>MAC address → identifies a network interface on the local network</strong></p>
+<p><strong>IP address → provides an address used for communication across IP networks</strong></p>
+<p>This distinction will become clearer when you study networking more deeply.</p>
+<hr />
+<h1 id="24-mac-address-vs-ip-address">24. MAC Address vs. IP Address</h1>
+<table>
+<thead>
+<tr>
+<th>MAC Address</th>
+<th>IP Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Associated with network interface</td>
+<td>Network address</td>
+</tr>
+<tr>
+<td>Used primarily at the local network level</td>
+<td>Used for IP communication</td>
+</tr>
+<tr>
+<td>Typically represented in hexadecimal</td>
+<td>IPv4 commonly represented in decimal notation</td>
+</tr>
+<tr>
+<td>Example: <code>00:1A:2B:3C:4D:5E</code></td>
+<td>Example: <code>192.168.1.25</code></td>
+</tr>
+</tbody>
+</table>
+<p>Don't get too deep into this distinction yet.</p>
+<p>At this stage, simply understand that <strong>MAC addresses and IP addresses serve different purposes</strong>.</p>
+<hr />
+<h1 id="25-how-does-a-web-request-actually-work">25. How Does a Web Request Actually Work?</h1>
+<p>Let's put today's concepts together.</p>
+<p>Imagine you type:</p>
+<p><strong>example.com</strong></p>
+<p>into your browser.</p>
+<p>A simplified version of what happens is:</p>
+<h3 id="step-1-you-enter-the-domain">Step 1 — You enter the domain</h3>
+<p><strong>User → Browser</strong></p>
+<p>You type:</p>
+<p><strong>example.com</strong></p>
+<h3 id="step-2-dns-lookup">Step 2 — DNS lookup</h3>
+<p>Your computer needs to determine which IP address corresponds to that domain.</p>
+<p><strong>Browser → DNS</strong></p>
+<p>DNS responds with an IP address.</p>
+<h3 id="step-3-network-communication">Step 3 — Network communication</h3>
+<p>Your computer sends traffic toward the destination IP address.</p>
+<p><strong>Laptop → Router → Internet</strong></p>
+<h3 id="step-4-web-server-receives-the-request">Step 4 — Web server receives the request</h3>
+<p>The request reaches the appropriate web server.</p>
+<p><strong>Internet → Web Server</strong></p>
+<h3 id="step-5-server-processes-request">Step 5 — Server processes request</h3>
+<p>The server determines what information to return.</p>
+<h3 id="step-6-response-returns">Step 6 — Response returns</h3>
+<p>The server sends information back through the network.</p>
+<p><strong>Web Server → Internet → Router → Laptop</strong></p>
+<h3 id="step-7-browser-displays-the-result">Step 7 — Browser displays the result</h3>
+<p>Your browser processes the response and displays the webpage.</p>
+<hr />
+<h1 id="26-putting-it-all-together">26. Putting It All Together</h1>
+<p>Here's the complete simplified architecture:</p>
+<p><strong>User</strong></p>
+<p>↓</p>
+<p><strong>Browser</strong></p>
+<p>↓</p>
+<p><strong>DNS</strong></p>
+<p>↓</p>
+<p><strong>Network</strong></p>
+<p>↓</p>
+<p><strong>Router</strong></p>
+<p>↓</p>
+<p><strong>Internet</strong></p>
+<p>↓</p>
+<p><strong>Web/Application Server</strong></p>
+<p>↓</p>
+<p><strong>Database Server</strong></p>
+<p>↓</p>
+<p><strong>Storage</strong></p>
+<p>Notice how much of Day 3 is present.</p>
+<p>We have:</p>
+<ul>
+<li>Client</li>
+<li>Network</li>
+<li>Server</li>
+<li>Database</li>
+<li>Storage</li>
+<li>Infrastructure</li>
+<li>Cloud</li>
+</ul>
+<p>Day 4 adds the networking concepts that connect those pieces.</p>
+<hr />
+<h1 id="27-the-network-is-the-connector">27. The Network Is the Connector</h1>
+<p>This is perhaps the most important conceptual idea from today's lesson.</p>
+<p>Consider the systems we've studied so far:</p>
+<p><strong>Client</strong></p>
+<p><strong>Application Server</strong></p>
+<p><strong>Database Server</strong></p>
+<p><strong>Cloud Infrastructure</strong></p>
+<p>None of these systems are particularly useful to an organization if they cannot communicate.</p>
+<p>The network connects them.</p>
+<p>You can think of networking as the <strong>communication layer connecting the IT ecosystem</strong>.</p>
+<hr />
+<h1 id="28-example-healthcare-analytics-application">28. Example: Healthcare Analytics Application</h1>
+<p>Let's apply this to a realistic enterprise example.</p>
+<p>Imagine an analyst opens a healthcare supply-chain analytics application.</p>
+<p>The analyst's computer might have:</p>
+<p><strong>Private IP: 192.168.1.25</strong></p>
+<p>The analyst opens the application in a browser.</p>
+<p>The browser sends a request across the corporate network.</p>
+<p>The traffic might travel through:</p>
+<p><strong>Laptop → Wi-Fi → Switch → Router → Corporate Network → Cloud → Application Server</strong></p>
+<p>The application server then requests data:</p>
+<p><strong>Application Server → Database Server</strong></p>
+<p>The database returns the requested information:</p>
+<p><strong>Database → Application Server</strong></p>
+<p>The application server sends the results back:</p>
+<p><strong>Application Server → Network → Analyst's Laptop</strong></p>
+<p>The analyst sees the results in the browser.</p>
+<p>From the user's perspective, it feels like one application.</p>
+<p>Technically, many systems are communicating behind the scenes.</p>
+<hr />
+<h1 id="29-day-4-vocabulary">29. Day 4 Vocabulary</h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Network</strong></td>
+<td>Connected devices that can communicate</td>
+</tr>
+<tr>
+<td><strong>LAN</strong></td>
+<td>Local Area Network</td>
+</tr>
+<tr>
+<td><strong>WAN</strong></td>
+<td>Wide Area Network</td>
+</tr>
+<tr>
+<td><strong>Internet</strong></td>
+<td>Global interconnected network of networks</td>
+</tr>
+<tr>
+<td><strong>Switch</strong></td>
+<td>Connects devices within a network</td>
+</tr>
+<tr>
+<td><strong>Router</strong></td>
+<td>Connects different networks</td>
+</tr>
+<tr>
+<td><strong>IP Address</strong></td>
+<td>Network address used for IP communication</td>
+</tr>
+<tr>
+<td><strong>IPv4</strong></td>
+<td>Common version of IP using 32-bit addresses</td>
+</tr>
+<tr>
+<td><strong>IPv6</strong></td>
+<td>Newer IP version with a much larger address space</td>
+</tr>
+<tr>
+<td><strong>Private IP</strong></td>
+<td>IP address used within a private network</td>
+</tr>
+<tr>
+<td><strong>Public IP</strong></td>
+<td>IP address used for communication over the public Internet</td>
+</tr>
+<tr>
+<td><strong>DNS</strong></td>
+<td>Resolves domain names to IP addresses</td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>Rules governing communication</td>
+</tr>
+<tr>
+<td><strong>HTTP</strong></td>
+<td>Web communication protocol</td>
+</tr>
+<tr>
+<td><strong>HTTPS</strong></td>
+<td>Secure web communication</td>
+</tr>
+<tr>
+<td><strong>TCP</strong></td>
+<td>Reliable transport protocol</td>
+</tr>
+<tr>
+<td><strong>UDP</strong></td>
+<td>Lower-overhead transport protocol</td>
+</tr>
+<tr>
+<td><strong>MAC Address</strong></td>
+<td>Network interface identifier</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>Wireless networking technology</td>
+</tr>
+<tr>
+<td><strong>Ethernet</strong></td>
+<td>Common wired networking technology</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="30-exercise-trace-a-network-request">30. Exercise — Trace a Network Request</h1>
+<p>Choose a website or application you use regularly.</p>
+<p>For example:</p>
+<p><strong>Your company's analytics application</strong></p>
+<p>Now try to trace a request.</p>
+<p>Fill in:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Your Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What is the client?</td>
+<td></td>
+</tr>
+<tr>
+<td>What network is the client connected to?</td>
+<td></td>
+</tr>
+<tr>
+<td>Is the connection wired or wireless?</td>
+<td></td>
+</tr>
+<tr>
+<td>What device connects the local network to other networks?</td>
+<td></td>
+</tr>
+<tr>
+<td>What domain name does the application use?</td>
+<td></td>
+</tr>
+<tr>
+<td>What does DNS do?</td>
+<td></td>
+</tr>
+<tr>
+<td>What server receives the request?</td>
+<td></td>
+</tr>
+<tr>
+<td>Does the application need a database?</td>
+<td></td>
+</tr>
+<tr>
+<td>Where is the data stored?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Then draw your own simplified architecture:</p>
+<p><strong>User → ______ → ______ → ______ → ______ → Data</strong></p>
+<p>Try to identify the role of every component.</p>
+<hr />
+<h1 id="31-challenge-exercise-explain-it-to-a-non-technical-person">31. Challenge Exercise — Explain It to a Non-Technical Person</h1>
+<p>Imagine someone asks:</p>
+<blockquote>
+<p>"What happens when I open a website?"</p>
+</blockquote>
+<p>Explain it without using technical jargon initially.</p>
+<p>Then explain it again using at least these terms:</p>
+<ul>
+<li>Client</li>
+<li>Network</li>
+<li>Router</li>
+<li>DNS</li>
+<li>IP address</li>
+<li>Web server</li>
+<li>Database</li>
+<li>HTTPS</li>
+</ul>
+<p>The goal isn't to memorize definitions.</p>
+<p>The goal is to understand <strong>how the concepts interact</strong>.</p>
+<hr />
+<h1 id="32-day-4-quiz">32. Day 4 Quiz</h1>
+<h2 id="questions">Questions</h2>
+<h3 id="1-what-is-a-computer-network">1. What is a computer network?</h3>
+<p>A. A type of operating system<br />
+B. A collection of connected devices that can communicate<br />
+C. A database<br />
+D. A cloud provider  </p>
+<hr />
+<h3 id="2-what-does-lan-stand-for">2. What does LAN stand for?</h3>
+<p>A. Local Application Network<br />
+B. Long Area Network<br />
+C. Local Area Network<br />
+D. Linked Access Network  </p>
+<hr />
+<h3 id="3-what-is-the-primary-role-of-a-router">3. What is the primary role of a router?</h3>
+<p>A. Store files<br />
+B. Connect different networks<br />
+C. Store database records<br />
+D. Run applications  </p>
+<hr />
+<h3 id="4-what-is-the-primary-role-of-a-network-switch">4. What is the primary role of a network switch?</h3>
+<p>A. Connect devices within a network<br />
+B. Translate domain names<br />
+C. Store webpages<br />
+D. Encrypt databases  </p>
+<hr />
+<h3 id="5-what-is-an-ip-address">5. What is an IP address?</h3>
+<p>A. A type of database<br />
+B. A network address used for IP communication<br />
+C. A type of operating system<br />
+D. A programming language  </p>
+<hr />
+<h3 id="6-what-does-dns-primarily-do">6. What does DNS primarily do?</h3>
+<p>A. Encrypt files<br />
+B. Store databases<br />
+C. Translate domain names into IP addresses<br />
+D. Connect keyboards to computers  </p>
+<hr />
+<h3 id="7-what-is-a-protocol">7. What is a protocol?</h3>
+<p>A. A physical networking cable<br />
+B. A set of rules governing communication<br />
+C. A database server<br />
+D. A cloud provider  </p>
+<hr />
+<h3 id="8-what-is-https-used-for">8. What is HTTPS used for?</h3>
+<p>A. Secure web communication<br />
+B. Database storage<br />
+C. Physical network connections<br />
+D. CPU processing  </p>
+<hr />
+<h3 id="9-which-protocol-emphasizes-reliable-delivery">9. Which protocol emphasizes reliable delivery?</h3>
+<p>A. UDP<br />
+B. DNS<br />
+C. TCP<br />
+D. HTTP  </p>
+<hr />
+<h3 id="10-which-protocol-generally-has-lower-overhead-and-does-not-provide-tcps-same-reliability-guarantees">10. Which protocol generally has lower overhead and does not provide TCP's same reliability guarantees?</h3>
+<p>A. TCP<br />
+B. UDP<br />
+C. HTTPS<br />
+D. DNS  </p>
+<hr />
+<h3 id="11-which-is-an-example-of-a-private-ipv4-address">11. Which is an example of a private IPv4 address?</h3>
+<p>A. 8.8.8.8<br />
+B. 192.168.1.25<br />
+C. 172.300.1.1<br />
+D. 255.255.255.255  </p>
+<hr />
+<h3 id="12-what-is-the-primary-purpose-of-a-mac-address">12. What is the primary purpose of a MAC address?</h3>
+<p>A. Identify a network interface at the local network level<br />
+B. Identify a website<br />
+C. Replace DNS<br />
+D. Encrypt Internet traffic  </p>
+<hr />
+<h3 id="13-which-statement-best-describes-the-internet">13. Which statement best describes the Internet?</h3>
+<p>A. A single corporate LAN<br />
+B. A global network of interconnected networks<br />
+C. A type of database<br />
+D. A single physical server  </p>
+<hr />
+<h3 id="14-what-happens-first-when-a-browser-needs-to-determine-the-ip-address-associated-with-a-domain-name">14. What happens first when a browser needs to determine the IP address associated with a domain name?</h3>
+<p>A. It contacts the database server<br />
+B. It performs a DNS lookup<br />
+C. It shuts down the router<br />
+D. It contacts the CPU  </p>
+<hr />
+<h3 id="15-which-sequence-best-represents-a-simplified-web-request">15. Which sequence best represents a simplified web request?</h3>
+<p>A. Database → Browser → DNS → User<br />
+B. User → Browser → DNS → Network → Web Server → Response<br />
+C. User → Database → Router → Browser<br />
+D. Browser → Storage → CPU → DNS  </p>
+<hr />
+<h1 id="33-answer-key">33. Answer Key</h1>
+<h3 id="1-b-a-collection-of-connected-devices-that-can-communicate">1. B — A collection of connected devices that can communicate</h3>
+<p>That's the fundamental definition of a network.</p>
+<h3 id="2-c-local-area-network">2. C — Local Area Network</h3>
+<p>A LAN covers a relatively limited geographic area.</p>
+<h3 id="3-b-connect-different-networks">3. B — Connect different networks</h3>
+<p>Routers move traffic between networks.</p>
+<h3 id="4-a-connect-devices-within-a-network">4. A — Connect devices within a network</h3>
+<p>Switches primarily connect devices on the same local network.</p>
+<h3 id="5-b-a-network-address-used-for-ip-communication">5. B — A network address used for IP communication</h3>
+<p>IP addresses allow network traffic to identify destinations.</p>
+<h3 id="6-c-translate-domain-names-into-ip-addresses">6. C — Translate domain names into IP addresses</h3>
+<p>DNS allows humans to use names such as <code>example.com</code> rather than memorizing IP addresses.</p>
+<h3 id="7-b-a-set-of-rules-governing-communication">7. B — A set of rules governing communication</h3>
+<p>Protocols establish rules that systems follow when communicating.</p>
+<h3 id="8-a-secure-web-communication">8. A — Secure web communication</h3>
+<p>HTTPS provides HTTP communication protected through TLS.</p>
+<h3 id="9-c-tcp">9. C — TCP</h3>
+<p>TCP emphasizes reliable and ordered delivery.</p>
+<h3 id="10-b-udp">10. B — UDP</h3>
+<p>UDP provides lower-overhead communication without TCP's same delivery guarantees.</p>
+<h3 id="11-b-192168125">11. B — 192.168.1.25</h3>
+<p>192.168.x.x is one of the private IPv4 address ranges.</p>
+<h3 id="12-a-identify-a-network-interface-at-the-local-network-level">12. A — Identify a network interface at the local network level</h3>
+<p>A MAC address is associated with a network interface and is used primarily within local networking.</p>
+<h3 id="13-b-a-global-network-of-interconnected-networks">13. B — A global network of interconnected networks</h3>
+<p>The Internet connects enormous numbers of individual networks.</p>
+<h3 id="14-b-it-performs-a-dns-lookup">14. B — It performs a DNS lookup</h3>
+<p>DNS helps determine the IP address associated with a domain name.</p>
+<h3 id="15-b-user-browser-dns-network-web-server-response">15. B — User → Browser → DNS → Network → Web Server → Response</h3>
+<p>This is a simplified representation of how a web request works.</p>
+<hr />
+<h1 id="34-mastery-check">34. Mastery Check</h1>
+<p>Before moving to Day 5, make sure you can explain these concepts <strong>without looking at your notes</strong>.</p>
+<h2 id="networks">Networks</h2>
+<ul>
+<li>What is a network?</li>
+<li>What is a LAN?</li>
+<li>What is a WAN?</li>
+<li>How is the Internet different from a LAN?</li>
+</ul>
+<h2 id="network-devices">Network Devices</h2>
+<ul>
+<li>What does a switch do?</li>
+<li>What does a router do?</li>
+<li>What does a wireless access point do?</li>
+</ul>
+<h2 id="ip-addresses">IP Addresses</h2>
+<ul>
+<li>What is an IP address?</li>
+<li>What is IPv4?</li>
+<li>What is IPv6?</li>
+<li>What is the difference between a private and public IP address?</li>
+</ul>
+<h2 id="dns">DNS</h2>
+<ul>
+<li>What does DNS stand for?</li>
+<li>What problem does DNS solve?</li>
+<li>Why don't users normally need to memorize IP addresses?</li>
+</ul>
+<h2 id="protocols">Protocols</h2>
+<ul>
+<li>What is a protocol?</li>
+<li>What does HTTP do?</li>
+<li>What does HTTPS do?</li>
+<li>What does TCP do?</li>
+<li>What does UDP do?</li>
+<li>Why might an application choose UDP instead of TCP?</li>
+</ul>
+<h2 id="network-architecture">Network Architecture</h2>
+<p>Can you explain this sequence?</p>
+<p><strong>Laptop → Wi-Fi → Router → Internet → Web Server → Database</strong></p>
+<p>And explain the role of each component?</p>
+<hr />
+<h1 id="mastery-score">Mastery Score</h1>
+<p><strong>16–20 confident answers:</strong> You're ready for Day 5.</p>
+<p><strong>12–15:</strong> Review IP addressing, DNS, and TCP/UDP.</p>
+<p><strong>Below 12:</strong> Revisit Sections 2–25 before continuing.</p>
+<hr />
+<h1 id="35-key-takeaway">35. Key Takeaway</h1>
+<p>The biggest idea from Day 4 is:</p>
+<blockquote>
+<p><strong>Networks allow the components of an IT system to communicate.</strong></p>
+</blockquote>
+<p>A modern application might involve:</p>
+<p><strong>User</strong></p>
+<p>↓  </p>
+<p><strong>Client</strong></p>
+<p>↓  </p>
+<p><strong>Wi-Fi / Ethernet</strong></p>
+<p>↓  </p>
+<p><strong>Switch</strong></p>
+<p>↓  </p>
+<p><strong>Router</strong></p>
+<p>↓  </p>
+<p><strong>Network / Internet</strong></p>
+<p>↓  </p>
+<p><strong>Web or Application Server</strong></p>
+<p>↓  </p>
+<p><strong>Database Server</strong></p>
+<p>↓  </p>
+<p><strong>Storage</strong></p>
+<p>Networking provides the communication infrastructure that connects all of these components.</p>
+<h3 id="your-progression-so-far">Your progression so far</h3>
+<p><strong>Day 1 — What is IT?</strong></p>
+<p>People + Processes + Technology + Data</p>
+<p><strong>Day 2 — What's inside a computer?</strong></p>
+<p>Application + OS + CPU + RAM + Storage</p>
+<p><strong>Day 3 — How do organizations build larger systems?</strong></p>
+<p>Clients + Servers + Infrastructure + Virtualization + Cloud</p>
+<p><strong>Day 4 — How do those systems communicate?</strong></p>
+<p>Networks + IP Addresses + DNS + Protocols + Routers + Switches</p>
+<p>The next major step is to understand <strong>how organizations store, organize, retrieve, and work with the data flowing through these systems</strong>. That leads directly into <strong>databases, relational data, SQL, and APIs</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/quiz-engine.js"></script>
+      
+    
+  </body>
+</html>
