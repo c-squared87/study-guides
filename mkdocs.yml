@@ -11,6 +11,9 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
   - javascripts/quiz-engine.js
 
+extra_css:
+  - stylesheets/quiz.css
+
 nav:
   - Home: index.md
   - Quizzes: 

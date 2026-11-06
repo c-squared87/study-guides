@@ -5,7 +5,7 @@ in the first five days of College Algebra.
 
 ## Quiz Overview
 
-- **Questions:** 3 (initial development version)
+- **Questions:** 10 (initial development version)
 - **Format:** Multiple choice
 - **Passing score:** 70%
 - **Mode:** Assessment

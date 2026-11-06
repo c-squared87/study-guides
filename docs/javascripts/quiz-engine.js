@@ -71,10 +71,10 @@ async function initializeQuiz() {
 function renderQuestion() {
 
     const question = quizData.questions[currentQuestionIndex];
-
     const totalQuestions = quizData.questions.length;
-
     const selectedAnswer = userAnswers[question.id];
+
+    const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
     // Generate the answer choices.
     const optionsHTML = question.options.map((option, index) => {
@@ -90,62 +90,65 @@ function renderQuestion() {
                     ${isSelected ? "checked" : ""}
                     onchange="selectAnswer(${index})"
                 >
-                <span>${option}</span>
+                <span class="quiz-option-text">${option}</span>
             </label>
         `;
 
     }).join("");
 
-    // Display the question and its answers.
     quizContainer.innerHTML = `
 
-        <div class="quiz-header">
+        <div class="quiz-app">
 
-            <div class="quiz-progress">
-                Question ${currentQuestionIndex + 1}
-                of ${totalQuestions}
+            <div class="quiz-header">
+
+                <div class="quiz-progress">
+                    <span>Question ${currentQuestionIndex + 1} of ${totalQuestions}</span>
+                    <span>${Math.round(progress)}% complete</span>
+                </div>
+
+                <div class="quiz-progress-bar">
+                    <div
+                        class="quiz-progress-fill"
+                        style="width: ${progress}%"
+                    ></div>
+                </div>
+
             </div>
 
-            <div class="quiz-progress-bar">
-                <div
-                    class="quiz-progress-fill"
-                    style="width: ${((currentQuestionIndex + 1) / totalQuestions) * 100}%"
-                ></div>
+            <div class="quiz-question">
+
+                <h3>${question.question}</h3>
+
+                <div class="quiz-options">
+                    ${optionsHTML}
+                </div>
+
             </div>
 
-        </div>
+            <div class="quiz-navigation">
 
-        <div class="quiz-question">
+                <button
+                    class="quiz-button quiz-button-secondary"
+                    onclick="previousQuestion()"
+                    ${currentQuestionIndex === 0 ? "disabled" : ""}
+                >
+                    Previous
+                </button>
 
-            <h3>${question.question}</h3>
+                ${currentQuestionIndex === totalQuestions - 1
+                    ?
+                    `<button class="quiz-button quiz-button-primary" onclick="submitQuiz()">Submit Quiz</button>`
+                    :
+                    `<button class="quiz-button quiz-button-primary" onclick="nextQuestion()">Next</button>`
+                }
 
-            <div class="quiz-options">
-                ${optionsHTML}
             </div>
-
-        </div>
-
-        <div class="quiz-navigation">
-
-            <button
-                onclick="previousQuestion()"
-                ${currentQuestionIndex === 0 ? "disabled" : ""}
-            >
-                Previous
-            </button>
-
-            ${currentQuestionIndex === totalQuestions - 1
-            ?
-            `<button onclick="submitQuiz()">Submit Quiz</button>`
-            :
-            `<button onclick="nextQuestion()">Next</button>`
-        }
 
         </div>
 
     `;
 
-    // Render any mathematical notation in the newly inserted HTML.
     if (window.MathJax && window.MathJax.typesetPromise) {
         MathJax.typesetPromise([quizContainer]);
     }
@@ -302,11 +305,9 @@ function renderResults() {
     const passed = results.percentage >=
         quizData.settings.passing_score;
 
-    // Generate question-by-question review.
     const reviewHTML = quizData.questions.map((question, index) => {
 
         const selectedAnswer = userAnswers[question.id];
-
         const isCorrect = selectedAnswer === question.correct_answer;
 
         const selectedText = selectedAnswer === undefined
@@ -315,12 +316,14 @@ function renderResults() {
 
         return `
 
-            <div class="quiz-review-item">
+            <div class="quiz-review-item ${isCorrect ? "correct" : "incorrect"}">
 
-                <h3>
-                    Question ${index + 1}
-                    ${isCorrect ? "✓" : "✗"}
-                </h3>
+                <div class="quiz-review-heading">
+                    <h3>Question ${index + 1}</h3>
+                    <span class="quiz-review-status">
+                        ${isCorrect ? "Correct" : "Incorrect"}
+                    </span>
+                </div>
 
                 <p>${question.question}</p>
 
@@ -335,11 +338,8 @@ function renderResults() {
                 </p>
 
                 <div class="quiz-explanation">
-
                     <strong>Explanation</strong>
-
                     <p>${question.explanation}</p>
-
                 </div>
 
             </div>
@@ -348,7 +348,6 @@ function renderResults() {
 
     }).join("");
 
-    // Generate topic performance.
     const topicHTML = Object.entries(results.topicResults).map(
         ([topic, data]) => {
 
@@ -368,50 +367,68 @@ function renderResults() {
 
     quizContainer.innerHTML = `
 
-        <div class="quiz-results">
+        <div class="quiz-app">
 
-            <h2>Quiz Complete!</h2>
+            <div class="quiz-results">
 
-            <div class="quiz-score">
+                <div class="quiz-score-card">
 
-                <div class="quiz-score-percentage">
-                    ${results.percentage}%
+                    <h2>Quiz Complete!</h2>
+
+                    <div class="quiz-score-percentage">
+                        ${results.percentage}%
+                    </div>
+
+                    <p>
+                        ${results.correctAnswers}
+                        out of
+                        ${results.totalQuestions}
+                        questions correct
+                    </p>
+
+                    <h3 class="${passed ? "quiz-passed" : "quiz-failed"}">
+                        ${passed ? "Passed!" : "Not Passed"}
+                    </h3>
+
                 </div>
 
-                <p>
-                    ${results.correctAnswers}
-                    out of
-                    ${results.totalQuestions}
-                    questions correct
-                </p>
+                <section class="quiz-results-section">
 
-                <h3 class="${passed ? "quiz-passed" : "quiz-failed"}">
-                    ${passed ? "Passed!" : "Not Passed"}
-                </h3>
+                    <h3>Topic Performance</h3>
+
+                    <div class="quiz-topic-results">
+                        ${topicHTML}
+                    </div>
+
+                </section>
+
+                <section class="quiz-results-section">
+
+                    <h3>Question Review</h3>
+
+                    <div class="quiz-review">
+                        ${reviewHTML}
+                    </div>
+
+                </section>
+
+                <div class="quiz-results-actions">
+
+                    <button
+                        class="quiz-button quiz-button-primary"
+                        onclick="retakeQuiz()"
+                    >
+                        Retake Quiz
+                    </button>
+
+                </div>
 
             </div>
-
-            <h3>Topic Performance</h3>
-
-            <div class="quiz-topic-results">
-                ${topicHTML}
-            </div>
-
-            <h3>Question Review</h3>
-
-            <div class="quiz-review">
-                ${reviewHTML}
-            </div>
-
-            <button onclick="retakeQuiz()">
-                Retake Quiz
-            </button>
 
         </div>
 
     `;
 
-    // Render mathematical notation in the results.
     if (window.MathJax && window.MathJax.typesetPromise) {
         MathJax.typesetPromise([quizContainer]);
     }
