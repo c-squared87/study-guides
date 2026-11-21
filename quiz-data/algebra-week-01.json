@@ -1,0 +1,163 @@
+
+{
+  "id": "algebra-week-01",
+  "title": "College Algebra - Week 1",
+  "description": "Assessment covering foundational algebra concepts from the first five study days.",
+  "settings": {
+    "mode": "assessment",
+    "passing_score": 70,
+    "shuffle_questions": false
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "type": "multiple_choice",
+      "topic": "fractions",
+      "question": "Simplify the following expression: \\(\\frac{2}{3}+\\frac{1}{6}\\)",
+      "options": [
+        "\\(\\frac{3}{9}\\)",
+        "\\(\\frac{5}{6}\\)",
+        "\\(\\frac{3}{6}\\)",
+        "\\(\\frac{1}{2}\\)"
+      ],
+      "correct_answer": 1,
+      "explanation": "Convert \\(\\frac{2}{3}\\) into an equivalent fraction with a denominator of 6: \\(\\frac{2}{3}=\\frac{4}{6}\\). Then add: \\(\\frac{4}{6}+\\frac{1}{6}=\\frac{5}{6}\\).",
+      "points": 1
+    },
+    {
+      "id": "q02",
+      "type": "multiple_choice",
+      "topic": "order-of-operations",
+      "question": "Evaluate the following expression: \\(3+4\\times 2\\)",
+      "options": [
+        "14",
+        "11",
+        "10",
+        "9"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multiplication comes before addition according to the order of operations. First calculate \\(4\\times 2=8\\), then add 3: \\(3+8=11\\).",
+      "points": 1
+    },
+    {
+      "id": "q03",
+      "type": "multiple_choice",
+      "topic": "equations",
+      "question": "Solve for \\(x\\): \\(2x+6=14\\)",
+      "options": [
+        "\\(x=3\\)",
+        "\\(x=4\\)",
+        "\\(x=5\\)",
+        "\\(x=8\\)"
+      ],
+      "correct_answer": 1,
+      "explanation": "Subtract 6 from both sides to get \\(2x=8\\). Divide both sides by 2 to get \\(x=4\\).",
+      "points": 1
+    },
+    {
+      "id": "q04",
+      "type": "multiple_choice",
+      "topic": "algebraic-expressions",
+      "question": "Simplify the following expression by combining like terms: \\(4a+3-2a+5\\)",
+      "options": [
+        "\\(6a+8\\)",
+        "\\(2a+8\\)",
+        "\\(2a-2\\)",
+        "\\(6a+2\\)"
+      ],
+      "correct_answer": 1,
+      "explanation": "Combine the variable terms: \\(4a-2a=2a\\). Then combine the constants: \\(3+5=8\\). The simplified expression is \\(2a+8\\).",
+      "points": 1
+    },
+    {
+      "id": "q05",
+      "type": "multiple_choice",
+      "topic": "signed-numbers",
+      "question": "Evaluate the following expression: \\(-8+3\\times 4\\)",
+      "options": [
+        "20",
+        "4",
+        "-20",
+        "-4"
+      ],
+      "correct_answer": 1,
+      "explanation": "Perform multiplication first: \\(3\\times 4=12\\). Then add the negative number: \\(-8+12=4\\).",
+      "points": 1
+    },
+    {
+      "id": "q06",
+      "type": "multiple_choice",
+      "topic": "exponents",
+      "question": "Simplify the expression: \\(2^3\\times 2^2\\)",
+      "options": [
+        "16",
+        "32",
+        "64",
+        "128"
+      ],
+      "correct_answer": 1,
+      "explanation": "When multiplying powers with the same base, add the exponents: \\(2^3\\times 2^2=2^{3+2}=2^5=32\\).",
+      "points": 1
+    },
+    {
+      "id": "q07",
+      "type": "multiple_choice",
+      "topic": "radicals",
+      "question": "Evaluate the following expression: \\(\\sqrt{144}-\\sqrt{25}\\)",
+      "options": [
+        "17",
+        "7",
+        "-7",
+        "19"
+      ],
+      "correct_answer": 1,
+      "explanation": "The square root of 144 is 12, and the square root of 25 is 5. Subtract: \\(12-5=7\\).",
+      "points": 1
+    },
+    {
+      "id": "q08",
+      "type": "multiple_choice",
+      "topic": "word-problems-and-inequalities",
+      "question": "A streaming service charges a monthly base fee of $5 plus $2 for each movie rented. You have a budget of no more than $17. If \\(m\\) represents the number of movies you can rent, which inequality represents your budget constraint?",
+      "options": [
+        "\\(5+2m\\leq 17\\)",
+        "\\(5m+2\\leq 17\\)",
+        "\\(5+2m\\geq 17\\)",
+        "\\(2m\\leq 17\\)"
+      ],
+      "correct_answer": 0,
+      "explanation": "The base fee is $5, and each movie costs $2. Therefore, the total cost is \\(5+2m\\). Since you can spend no more than $17, the total must be less than or equal to 17: \\(5+2m\\leq 17\\).",
+      "points": 1
+    },
+    {
+      "id": "q09",
+      "type": "multiple_choice",
+      "topic": "coordinate-plane",
+      "question": "The point \\((-4,3)\\) is located in which quadrant of the coordinate plane?",
+      "options": [
+        "Quadrant I",
+        "Quadrant II",
+        "Quadrant III",
+        "Quadrant IV"
+      ],
+      "correct_answer": 1,
+      "explanation": "The x-coordinate is negative and the y-coordinate is positive. Points with a negative x-coordinate and positive y-coordinate are located in Quadrant II.",
+      "points": 1
+    },
+    {
+      "id": "q10",
+      "type": "multiple_choice",
+      "topic": "slope-and-linear-functions",
+      "question": "A line passes through the points \\((0,5)\\) and \\((2,1)\\). Which equation represents this line in slope-intercept form?",
+      "options": [
+        "\\(y=2x+5\\)",
+        "\\(y=-2x+5\\)",
+        "\\(y=-2x-5\\)",
+        "\\(y=2x-5\\)"
+      ],
+      "correct_answer": 1,
+      "explanation": "Calculate the slope using \\(m=\\frac{y_2-y_1}{x_2-x_1}\\): \\(m=\\frac{1-5}{2-0}=\\frac{-4}{2}=-2\\). The y-intercept is 5 because the line passes through \\((0,5)\\). Substitute into \\(y=mx+b\\) to get \\(y=-2x+5\\).",
+      "points": 1
+    }
+  ]
+}
